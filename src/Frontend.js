@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Fishmeter from "./Fishmeter";
 
 class Frontend extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class Frontend extends Component {
 
     componentDidMount(){
         if (window.addEventListener) {
-            window.addEventListener("storage", this.onStorage, false);
+            window.addEventListener("storage", this.onStorage, true);
         } else {
             window.attachEvent("onstorage", this.onStorage);
         }
@@ -28,6 +29,9 @@ class Frontend extends Component {
                 <p>
                     Yoyoyo {this.state.volume}
                 </p>
+                <div class="text-center">
+                    <Fishmeter rotate={ this.state.volume * 180 }/>
+                </div>
             </div>
         );
 

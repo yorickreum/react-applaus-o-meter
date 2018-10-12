@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Admin from './Admin';
 import registerServiceWorker from './registerServiceWorker';
-import Fishmeter from "./Fishmeter";
 import Frontend from "./Frontend";
 
 ReactDOM.render(
