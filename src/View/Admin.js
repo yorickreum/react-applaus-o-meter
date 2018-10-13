@@ -29,7 +29,6 @@ class Admin extends Component {
             }
         );
 
-        this.keyboardFunction = this.keyboardFunction.bind(this);
         this.addCompetitor = this.addCompetitor.bind(this);
         this.changeSettings = this.changeSettings.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -46,18 +45,8 @@ class Admin extends Component {
         }
     }
 
-    componentWillMount() {
-    }
-
     componentDidMount() {
-        document.addEventListener("keydown", this.keyboardFunction, false);
-        // console.log('did mount');
-        // console.log(this.state);
-        // console.log(JSON.stringify(this.state.competition));
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener("keydown", this.keyboardFunction, false);
+        document.title = "Admin | Applaus-O-Meter";
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -69,17 +58,10 @@ class Admin extends Component {
         let name = this.state.addCompetitorInput;
         if (!this.state.competition.isCompetitorNameAlreadyExists(name) && !(name === "")) {
             let competition = this.state.competition;
-            competition.addCompetitor(new Competitor(name))
+            competition.addCompetitor(new Competitor(name));
             this.setState({
                 competition: competition
             });
-            console.log(this.state);
-            // let c = <CompetitorTableRow name={name} duration={this.state.settings.duration}/>
-            // let competitors = this.state.competitors;
-            // competitors.push(c);
-            // this.setState( {
-            //    competitors: competitors,
-            // });
         }
     }
 
@@ -90,7 +72,6 @@ class Admin extends Component {
         this.setState({
             competition: competition
         });
-        console.log(this.state.competition);
     }
 
     handleChange(e) {
@@ -156,14 +137,6 @@ class Admin extends Component {
             </React.Fragment>
         );
     }
-
-    submit(event) {
-        // do something, or not, with the keydown event, maybe event.preventDefault()
-        this.setState({
-            record: false
-        })
-    }
-
 }
 
 export default Admin

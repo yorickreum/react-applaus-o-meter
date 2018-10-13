@@ -36,6 +36,10 @@ class Frontend extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = "View | Applaus-O-Meter";
+    }
+
     render() {
         let activeCompetitor = this.state.competition.getActiveCompetitor();
         let rating = 0.0;
@@ -45,7 +49,7 @@ class Frontend extends Component {
         }
 
         return (
-            <div id="frontend" className="container pt-2">
+            <div id="frontend" className="container p-2">
                 <h2 className="text-center text-warning">Applaus-O-Meter</h2>
                 <h1 className="text-center text-white bg-info rounded">Fishtival 2018</h1>
                 <div id="graphic" className="d-flex justify-content-center">

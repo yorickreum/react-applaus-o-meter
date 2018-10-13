@@ -79,14 +79,27 @@ class _Competition {
         return activeCompetitor;
     }
 
+    getLeader() {
+        let leadingCompetitor = null;
+        if (this.competitors[0]) {
+            leadingCompetitor = this.competitors[0];
+            this.competitors.forEach(function (comp, index, comps) {
+                if (comp.rating >= leadingCompetitor.rating) {
+                    leadingCompetitor = comp;
+                }
+            });
+        }
+        return leadingCompetitor;
+    }
 
-    dumpToLocalStorage(){
-        localStorage.setItem( 'competition', JSON.stringify(this) );
+
+    dumpToLocalStorage() {
+        localStorage.setItem('competition', JSON.stringify(this));
     }
 
     getJsonDateUri() {
         let str = JSON.stringify(this, null, '\t');
-        return 'data:application/json;charset=utf-8,'+ encodeURIComponent(str);
+        return 'data:application/json;charset=utf-8,' + encodeURIComponent(str);
     }
 
     /**

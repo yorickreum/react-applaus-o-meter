@@ -5,7 +5,7 @@ import RecordingDot from "./RecordingDot";
 function CompetitorCard(props) {
     const competitor = props.competitor;
     let cardBgClass = "bg-info";
-    if( false ) {
+    if( props.competition.getLeader() == competitor ) {
         cardBgClass = "bg-danger";
     }
     return (
@@ -32,7 +32,7 @@ class CompetitionCards extends Component {
             <div id="competitionCardContainer" className="container">
                 <div className="row justify-content-center">
                     {this.props.competition.competitors.map(
-                        competitor => <CompetitorCard competitor={competitor} />
+                        competitor => <CompetitorCard competition={this.props.competition} competitor={competitor} />
                     )}
                 </div>
             </div>
