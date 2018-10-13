@@ -4,13 +4,17 @@ class _Competition {
     constructor() {
         if (!_Competition.instance) {
 
-            this.competitors = [];
-            this._duration = 1500;
-            this.stateCallback = null;
+            this.reset();
 
             _Competition.instance = this;
         }
         return _Competition.instance;
+    }
+
+    reset() {
+        this.competitors = [];
+        this._duration = 15000;
+        this.stateCallbacks = [];
     }
 
     /**
@@ -18,14 +22,23 @@ class _Competition {
      * @param {Competitor} competitor
      */
     addCompetitor(competitor) {
-        this.competitors.push( competitor );
+        this.competitors.push(competitor);
     }
 
     get duration() {
         return this._duration;
     }
+
     set duration(value) {
-        this._duration = parseInt(value);
+        this._duration = parseInt(value, 10);
+    }
+
+    update() {
+        this.stateCallbacks.forEach(function (cb) {
+            if (cb) {
+                cb();
+            }
+        })
     }
 
     /**
@@ -49,7 +62,45 @@ class _Competition {
                 comps.splice(index, 1);
             }
         });
-        if(this.stateCallback) { this.stateCallback() }
+        this.update();
+    }
+
+    /**
+     *
+     * @returns {Competitor}
+     */
+    getActiveCompetitor() {
+        let activeCompetitor = null;
+        this.competitors.forEach(function (comp, index, comps) {
+            if (comp.isActive) {
+                activeCompetitor = comp;
+            }
+        });
+        return activeCompetitor;
+    }
+
+
+    dumpToLocalStorage(){
+        localStorage.setItem( 'competition', JSON.stringify(this) );
+    }
+
+    getJsonDateUri() {
+        let str = JSON.stringify(this, null, '\t');
+        return 'data:application/json;charset=utf-8,'+ encodeURIComponent(str);
+    }
+
+    /**
+     *
+     * @param data
+     * @returns {_Competition}
+     */
+    revive(data) {
+        this.reset();
+        data.competitors.forEach((comp) => {
+            let newComp = new Competitor();
+            newComp.revive(comp);
+            this.addCompetitor(newComp);
+        });
     }
 
 }

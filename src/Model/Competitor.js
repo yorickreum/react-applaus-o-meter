@@ -7,17 +7,16 @@ class Competitor {
      * @param {string} name
      * @param {double} rating
      */
-    constructor(name, rating = 0.0) {
+    constructor(name = '', rating = 0.0) {
         this.reset();
         this.name = name;
         this.rating = rating;
 
         this.measure = this.measure.bind(this);
-        // this.tick = this.tick.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     reset() {
-        this.levels = [];
         this.rating = 0.0;
         this.startedRecording = null;
         this.stoppedRecording = null;
@@ -25,9 +24,9 @@ class Competitor {
         this.levelSum = 0;
         this.measureDuration = Competition.duration;
         this.timeLeft = this.measureDuration;
-        if(Competition.stateCallback) {
-            Competition.stateCallback();
-        }
+        this.isActive = false;
+        clearInterval(this.interval);
+        Competition.update();
     }
 
     tick() {
@@ -42,9 +41,10 @@ class Competitor {
         else {
             this.stoppedRecording = Math.floor(Date.now());
             clearInterval(this.interval);
+            this.isActive = false;
             this.timeLeft = 0;
         }
-        if(Competition.stateCallback) { Competition.stateCallback(); }
+        Competition.update();
     }
 
     /**
@@ -59,8 +59,29 @@ class Competitor {
         this.measureDuration = Competition.duration;
         console.log(' duration! ' + this.measureDuration );
         let timestamp = Math.floor(Date.now());
-        this.startedRecording = parseInt( timestamp );
-        this.interval = setInterval(() => this.tick(), 10);
+        this.isActive = true;
+        this.startedRecording = parseInt( timestamp, 10 );
+        this.interval = setInterval(() => this.tick(), 10); // measure every 10th ms
+    }
+
+    /**
+     * Revive from JSON Competition data
+     * @param data
+     * @returns {Competitor}
+     */
+    revive(data) {
+        if( this.name != null ) {
+            this.name = data.name;
+            this.rating = data.rating;
+            this.startedRecording = data.startedRecording;
+            this.stoppedRecording = data.stoppedRecording;
+            this.levels = data.levels;
+            this.levelSum = data.levelSum;
+            this.measureDuration = data.measureDuration;
+            this.timeLeft = data.timeLeft;
+            this.isActive = data.isActive;
+        }
+        return this;
     }
 }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Competition from "../Model/Competition";
+import RecordingDot from "./RecordingDot";
 
 class CompetitorTableRow extends Component {
     constructor(props) {
@@ -12,12 +13,13 @@ class CompetitorTableRow extends Component {
         let competitor = this.state.competitor;
         return (
             <tr key={competitor.name}>
+                <td><RecordingDot isActive={competitor.isActive} /></td>
                 <td>{competitor.name}</td>
                 <td>{competitor.rating}</td>
-                <td>{competitor.timeLeft}</td>
+                <td>{competitor.timeLeft/1000}</td>
                 <td><input type="button" className="form-control btn btn-info" onClick={competitor.measure} value="Start"/>
                 </td>
-                <td><input type="button" className="form-control btn btn-warning" onClick={(() => competitor.reset() )}
+                <td><input type="button" className="form-control btn btn-warning" onClick={competitor.reset}
                            value="Reset"/></td>
                 <td><input type="button" className="form-control btn btn-danger" onClick={( () => Competition.removeCompetitor(competitor) )}
                            value="Delete"/></td>

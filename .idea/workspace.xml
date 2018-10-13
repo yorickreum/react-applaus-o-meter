@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d13eedb5-7726-41db-befb-713a532fbede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/Competitor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/CompetitionTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/CompetitorTableRow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/CompetitionCards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/CompetitionJsonExportBtn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/Heading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/RecordingDot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/styles/frontend.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Competitor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompetitorsTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fishmeter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Fishmeter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frontend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Volumemeter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Volumemeter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fish.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fish.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Competition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Competitor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Competitor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CompetitionTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CompetitionTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CompetitorTableRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CompetitorTableRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Fishmeter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Fishmeter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frontend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_custom_bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/styles/index.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,41 +41,41 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="babelrc" value="2" />
-          <entry key="css" value="5" />
+          <entry key="css" value="7" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="35" />
-          <entry key="json" value="2" />
+          <entry key="js" value="46" />
+          <entry key="json" value="3" />
           <entry key="rnc" value="1" />
-          <entry key="scss" value="4" />
+          <entry key="scss" value="6" />
           <entry key="svg" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="5" />
-          <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="35" />
+          <entry key="CSS" value="7" />
+          <entry key="JSON" value="5" />
+          <entry key="JavaScript" value="46" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RNG Compact" value="1" />
-          <entry key="SCSS" value="4" />
+          <entry key="SCSS" value="6" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="18" />
-          <entry key="js" value="11064" />
+          <entry key="js" value="16292" />
           <entry key="json" value="35" />
-          <entry key="scss" value="28" />
+          <entry key="scss" value="102" />
           <entry key="svg" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="35" />
-          <entry key="JavaScript" value="11064" />
+          <entry key="JavaScript" value="16292" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="SCSS" value="28" />
+          <entry key="SCSS" value="102" />
           <entry key="SVG" value="4" />
         </counts>
       </usages-collector>
@@ -89,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+            <state relative-caret-position="540">
+              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -99,31 +96,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
+        <entry file="file://$PROJECT_DIR$/src/View/CompetitorTableRow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Competitor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/Frontend.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state>
+              <caret selection-end-column="39" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -134,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/CompetitionTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -144,43 +120,75 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Volumemeter.js">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/CompetitorTableRow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="180">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="22" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Admin.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+        <entry file="file://$PROJECT_DIR$/src/View/Heading.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="105">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.css">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/View/styles/frontend.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Competitor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="63" column="84" selection-start-line="63" selection-start-column="84" selection-end-line="63" selection-end-column="84" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/CompetitionJsonExportBtn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/CompetitionCards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -194,27 +202,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.state =</find>
-      <find>class</find>
-      <find>name</find>
-      <find>clea</find>
-      <find>clearAll</find>
-      <find>start</find>
-      <find>startCompetitor</find>
-      <find>competitor</find>
-      <find>addCo</find>
-      <find>comp</find>
-      <find>compet</find>
-      <find>addcom</find>
-      <find>parse</find>
-      <find>on</find>
-      <find>vm</find>
-      <find>tick</find>
-      <find>volume</find>
-      <find>addcompe</find>
       <find>durat</find>
       <find>src/styles</find>
-      <find>setSta</find>
       <find>add</find>
       <find>new Cim</find>
       <find>Set</find>
@@ -224,6 +213,25 @@
       <find>duration</find>
       <find>change</find>
       <find>callb</find>
+      <find>stateCall</find>
+      <find>state</find>
+      <find>callback</find>
+      <find>update</find>
+      <find>Callback</find>
+      <find>if(</find>
+      <find>for</find>
+      <find>JSON</find>
+      <find>revive</find>
+      <find>reset</find>
+      <find>mea</find>
+      <find>console</find>
+      <find>setSta</find>
+      <find>set</find>
+      <find>se</find>
+      <find>setSt</find>
+      <find>Compet</find>
+      <find>string</find>
+      <find>localStorage.setItem</find>
     </findStrings>
     <replaceStrings>
       <replace>window.processor</replace>
@@ -236,6 +244,9 @@
       <replace>src/View/styles</replace>
       <replace>_Volumemeter</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -260,16 +271,22 @@
         <option value="$PROJECT_DIR$/src/CompetitorsTable.js" />
         <option value="$PROJECT_DIR$/src/Admin.js" />
         <option value="$PROJECT_DIR$/src/Competitor.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/View/Competitor.js" />
         <option value="$PROJECT_DIR$/src/Model/Volumemeter.js" />
-        <option value="$PROJECT_DIR$/src/Model/Competition.js" />
-        <option value="$PROJECT_DIR$/src/View/Admin.js" />
-        <option value="$PROJECT_DIR$/src/View/CompetitorTableRow.js" />
+        <option value="$PROJECT_DIR$/src/View/Fishmeter.js" />
+        <option value="$PROJECT_DIR$/src/View/styles/frontend.scss" />
         <option value="$PROJECT_DIR$/src/View/CompetitionTable.js" />
-        <option value="$PROJECT_DIR$/src/Model/Competitor.js" />
+        <option value="$PROJECT_DIR$/src/View/CompetitorTableRow.js" />
+        <option value="$PROJECT_DIR$/src/View/RecordingDot.js" />
         <option value="$PROJECT_DIR$/src/View/Frontend.js" />
+        <option value="$PROJECT_DIR$/src/View/Heading.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/View/CompetitionCards.js" />
+        <option value="$PROJECT_DIR$/src/View/Admin.js" />
+        <option value="$PROJECT_DIR$/src/Model/Competition.js" />
+        <option value="$PROJECT_DIR$/src/Model/Competitor.js" />
+        <option value="$PROJECT_DIR$/src/View/CompetitionJsonExportBtn.js" />
       </list>
     </option>
   </component>
@@ -313,19 +330,7 @@
             <path>
               <item name="applaus-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="applaus-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="applaus-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="applaus-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="applaus-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="applaus-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -336,6 +341,11 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file:///Users/yorickreum/applaus-react/node_modules/react-scripts/config/webpack.config.dev.js&#10;babelrc&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="nodejs_interpreter_path" value="/usr/local/Cellar/node/10.9.0/bin/node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -379,18 +389,17 @@
       <workItem from="1537430285312" duration="40000" />
       <workItem from="1539028591182" duration="11856000" />
       <workItem from="1539363322951" duration="15203000" />
-      <workItem from="1539387426319" duration="11278000" />
+      <workItem from="1539387426319" duration="25548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47444000" />
+    <option name="totallyTimeSpent" value="61714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="40" width="1541" height="1156" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16744496" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23482321" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -405,11 +414,11 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.21804512" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21804512" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.32955304" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
@@ -428,7 +437,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.21804512" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21804512" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -443,9 +452,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/config/webpack.config.dev.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -513,16 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Fishmeter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="5" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/fish.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -569,32 +565,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/styles/index.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2936" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -608,10 +582,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CompetitorTableRow.js">
+    <entry file="file://$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/styles/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="345">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Fishmeter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/RecordingDot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Frontend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="48" column="77" lean-forward="true" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/styles/frontend.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Heading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CompetitionCards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -620,48 +661,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CompetitionTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="345">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
+    <entry file="file://$PROJECT_DIR$/src/View/CompetitorTableRow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        <state>
+          <caret selection-end-column="39" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Competitor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+        <state relative-caret-position="332">
+          <caret line="63" column="84" selection-start-line="63" selection-start-column="84" selection-end-line="63" selection-end-column="84" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Frontend.js">
+    <entry file="file://$PROJECT_DIR$/src/View/CompetitionJsonExportBtn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>

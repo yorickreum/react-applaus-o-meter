@@ -10,7 +10,7 @@ class Fishmeter extends Component {
     render() {
         let fishstyle = {
             transformOrigin: '78.875% 50%',
-            transform: 'translateX(-28.875%) rotate(' + this.props.rotate + 'deg)',
+            transform: 'translateX(-28.875%) rotate(' + parseFloat(this.props.rating) * 180 + 'deg)',
             height: '600px'
         };
         return(

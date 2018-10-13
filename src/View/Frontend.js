@@ -1,23 +1,26 @@
 import React, {Component} from "react";
 import Fishmeter from "./Fishmeter";
+import CompetitionCards from "./CompetitionCards";
 import Competition from "../Model/Competition";
+import './styles/frontend.css';
 
 class Frontend extends Component {
     constructor(props) {
         super(props);
+
+        let compParsed = JSON.parse(localStorage.getItem('competition'));
+        if (compParsed != null) {
+            Competition.revive(compParsed);
+        }
+
         this.state = {
             competition: Competition,
-        }
+        };
+
+        this.onStorage = this.onStorage.bind(this);
     }
 
-    onStorage(data) {
-        let s = JSON.parse( localStorage.getItem('state') );
-        this.setState(
-            state => s
-        )
-    }
-
-    componentDidMount(){
+    componentWillMount() {
         if (window.addEventListener) {
             window.addEventListener("storage", this.onStorage, true);
         } else {
@@ -25,18 +28,34 @@ class Frontend extends Component {
         }
     }
 
+    onStorage(data) {
+        let compParsed = JSON.parse(localStorage.getItem('competition'));
+        if (compParsed != null) {
+            Competition.revive(compParsed);
+            this.forceUpdate();
+        }
+    }
+
     render() {
+        let activeCompetitor = this.state.competition.getActiveCompetitor();
+        let rating = 0.0;
+        // console.log( activeCompetitor );
+        if (activeCompetitor) {
+            rating = activeCompetitor.rating;
+        }
+
         return (
-            <div>
-                <p>
-                    Yoyoyo {this.state.volume}
-                </p>
-                <div class="text-center">
-                    <Fishmeter rotate={ this.state.volume * 180 }/>
+            <div id="frontend" className="container pt-2">
+                <h2 className="text-center text-warning">Applaus-O-Meter</h2>
+                <h1 className="text-center text-white bg-info rounded">Fishtival 2018</h1>
+                <div id="graphic" className="d-flex justify-content-center">
+                    <Fishmeter rating={rating} />
+                </div>
+                <div id="information">
+                    <CompetitionCards competition={this.state.competition}/>
                 </div>
             </div>
-        );
-
+        )
     }
 }
 
