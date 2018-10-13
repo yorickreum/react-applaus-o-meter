@@ -1,28 +1,32 @@
 import React, {Component} from 'react';
-import Volumemeter from './Volumemeter';
 import './Admin.css';
 import './styles/index.css'
-import CompetitorsTable from "./CompetitorsTable";
-import Competitor from './Competitor'
+import CompetitionTable from "./CompetitionTable";
+import Competition from '../Model/Competition';
+import Competitor from '../Model/Competitor';
 
 
 class Admin extends Component {
     constructor(props) {
         super(props);
-        this.vm = new Volumemeter();
-        if (localStorage.state === null) {
-            this.clearAll();
+        if (localStorage.state == null) {
+            this.state = {
+                addCompetitorInput: '',
+                durationInput: Competition.duration,
+                competition: Competition,
+            };
         } else {
-            this.state = JSON.parse(localStorage.state);
+            // this.state = JSON.parse(localStorage.state);
+            this.state = {
+                addCompetitorInput: '',
+                durationInput: Competition.duration,
+                competition: Competition,
+            };
         }
         this.keyboardFunction = this.keyboardFunction.bind(this);
         this.addCompetitor = this.addCompetitor.bind(this);
-        this.isCompetitorNameAlreadyExists = this.isCompetitorNameAlreadyExists.bind(this);
-        this.removeCompetitor = this.removeCompetitor.bind(this);
         this.changeSettings = this.changeSettings.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.startCompetitor = this.startCompetitor.bind(this);
-        this.clearAll = this.clearAll.bind(this);
     }
 
     keyboardFunction(event) {
@@ -35,15 +39,18 @@ class Admin extends Component {
         }
     }
 
-    tick() {
-        this.setState(state => ({
-            volume: this.vm.getVolume()
-        }));
+    componentWillMount() {
+        Competition.stateCallback = () => {
+            console.log('stateCallback');
+            this.forceUpdate();
+        };
     }
 
     componentDidMount() {
         document.addEventListener("keydown", this.keyboardFunction, false);
-        this.interval = setInterval(() => this.tick(), 10);
+        // console.log('did mount');
+        // console.log(this.state);
+        // console.log(JSON.stringify(this.state.competition));
     }
 
     componentWillUnmount() {
@@ -57,52 +64,36 @@ class Admin extends Component {
     addCompetitor(event) {
         event.preventDefault();
         let name = this.state.addCompetitorInput;
-        if (!this.isCompetitorNameAlreadyExists(name) && !(name === "")) {
-            let c = new Competitor(name);
-            this.state.competitors.push(c);
+        if (!this.state.competition.isCompetitorNameAlreadyExists(name) && !(name === "")) {
+            let competition = this.state.competition;
+            competition.addCompetitor(new Competitor(name))
+            this.setState( {
+                competition: competition
+            });
+            console.log(this.state);
+            // let c = <CompetitorTableRow name={name} duration={this.state.settings.duration}/>
+            // let competitors = this.state.competitors;
+            // competitors.push(c);
+            // this.setState( {
+            //    competitors: competitors,
+            // });
         }
     }
 
     changeSettings(event) {
         event.preventDefault();
-        let settings = this.state.settings;
-        settings.duration = this.state.durationInput;
-        this.setState({
-            settings: settings
+        let competition = this.state.competition;
+        competition.duration = this.state.durationInput;
+        this.setState( {
+            competition: competition
         });
-    }
-
-    isCompetitorNameAlreadyExists(name) {
-        let exists = false;
-        this.state.competitors.forEach(function (competitor) {
-            if (name === competitor.props.name) {
-                exists = true;
-            }
-        });
-        return exists;
-    }
-
-    removeCompetitor(competitor) {
-        this.state.competitors.forEach(function (comp, index, comps) {
-            if (competitor === comp) {
-                comps.splice(index, 1);
-            }
-        });
+        console.log( this.state.competition );
     }
 
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});
     }
 
-    clearAll() {
-        this.setState( {
-            volume: this.vm.getVolume(),
-            addCompetitorInput: '',
-            durationInput: 15,
-            competitors: [],
-            settings: {},
-        } );
-    }
 
     render() {
         return (
@@ -125,7 +116,7 @@ class Admin extends Component {
                                    onChange={this.handleChange}/>
                         </div>
                         <div className="col-2">
-                            <input type="submit" className="form-control btn btn-success" value="Add!"/>
+                            <input type="submit" className="form-control btn btn-success" value="Set!"/>
                         </div>
                     </form>
                 </div>
@@ -144,7 +135,7 @@ class Admin extends Component {
                     </form>
 
                     <div>
-                        <CompetitorsTable competitors={this.state.competitors} startCallback={this.startCompetitor} setCallback={this.setCompetitor} removeCallback={this.removeCompetitor}/>
+                        <CompetitionTable competition={this.state.competition} startCallback={this.startCompetitor} setCallback={this.setCompetitor} removeCallback={this.removeCompetitor}/>
                     </div>
                 </div>
             </div>

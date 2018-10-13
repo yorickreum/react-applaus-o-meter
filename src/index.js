@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+import './index.css';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Admin from './Admin';
+import Admin from './View/Admin';
 import registerServiceWorker from './registerServiceWorker';
-import Frontend from "./Frontend";
+import Frontend from "./View/Frontend";
 
 ReactDOM.render(
     <BrowserRouter>

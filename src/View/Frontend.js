@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import Fishmeter from "./Fishmeter";
+import Competition from "../Model/Competition";
 
 class Frontend extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
-        this.onStorage = this.onStorage.bind(this);
+        this.state = {
+            competition: Competition,
+        }
     }
 
     onStorage(data) {
