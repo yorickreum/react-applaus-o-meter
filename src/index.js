@@ -17,20 +17,18 @@ class Areas extends Component {
         return (
             <React.Fragment>
                 <Heading/>
-                <div class="container">
+                <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-4">
                             <div className="card h-100 text-white text-center bg-warning">
                                 <div className="card-body py-5">
-                                    <h2 className="card-title text-info pb-3">Administration</h2>
+                                    <h2 className="card-title text-primary pb-3">Administration</h2>
                                     <div className="card-text">
-                                        <p>
-                                            <ul className="text-left">
-                                                <li>Teilnehmner anlegen und verwalten</li>
-                                                <li>Abstimmungen starten</li>
-                                            </ul>
-                                        </p>
-                                        <Link to="/admin" className="btn btn-info">Hier entlang &#8680;</Link>
+                                        <ul className="text-left">
+                                            <li>Teilnehmner anlegen und verwalten</li>
+                                            <li>Abstimmungen starten</li>
+                                        </ul>
+                                        <Link to="/admin" className="btn btn-primary">Hier entlang &#8680;</Link>
                                     </div>
                                 </div>
                             </div>
@@ -38,12 +36,12 @@ class Areas extends Component {
                         <div className="col-4">
                             <div className="card h-100 text-white text-center bg-warning">
                                 <div className="card-body py-5">
-                                    <h2 className="card-title text-info pb-3">Abstimmung</h2>
+                                    <h2 className="card-title text-primary pb-3">Abstimmung</h2>
                                     <div className="card-text">
                                         <p>
                                             Zum Beispiel in neuem Fenster öffnen und auf Beamer zeigen.
                                         </p>
-                                        <Link to="/view" className="btn btn-info">Hier entlang &#8680;</Link>
+                                        <Link to="/view" className="btn btn-primary">Hier entlang &#8680;</Link>
                                     </div>
                                 </div>
                             </div>

@@ -1,8 +1,10 @@
 import React, {Component} from "react";
 import Fishmeter from "./Fishmeter";
 import CompetitionCards from "./CompetitionCards";
+import CalibrationCards from "./CalibrationCards";
 import Competition from "../Model/Competition";
 import './styles/frontend.css';
+import Heading from "./Heading";
 
 class Frontend extends Component {
     constructor(props) {
@@ -15,7 +17,10 @@ class Frontend extends Component {
 
         this.state = {
             competition: Competition,
+            rating: 0.0
         };
+
+        // this.interval = setInterval(() => this.tick(), 10); // measure every 10th ms
 
         this.onStorage = this.onStorage.bind(this);
     }
@@ -32,6 +37,19 @@ class Frontend extends Component {
         let compParsed = JSON.parse(localStorage.getItem('competition'));
         if (compParsed != null) {
             Competition.revive(compParsed);
+            let activeCompetitor = Competition.getActiveCompetitor();
+            // console.log( activeCompetitor );
+            if (activeCompetitor) {
+                clearInterval(this.interval);
+                this.setState({
+                    rating: activeCompetitor.rating
+                })
+            }
+            else if( Competition.getActiveCalibrationCompetitor() ) {
+                this.setState({
+                    rating: Competition.getActiveCalibrationCompetitor().rating
+                })
+            }
             this.forceUpdate();
         }
     }
@@ -40,26 +58,38 @@ class Frontend extends Component {
         document.title = "View | Applaus-O-Meter";
     }
 
-    render() {
-        let activeCompetitor = this.state.competition.getActiveCompetitor();
-        let rating = 0.0;
-        // console.log( activeCompetitor );
-        if (activeCompetitor) {
-            rating = activeCompetitor.rating;
-        }
+    tick() {
+        this.setState({
+            rating: Volumemeter.getVolume() / 1
+        })
+    }
 
-        return (
-            <div id="frontend" className="container p-2">
-                <h2 className="text-center text-warning">Applaus-O-Meter</h2>
-                <h1 className="text-center text-white bg-info rounded">Fishtival 2018</h1>
-                <div id="graphic" className="d-flex justify-content-center">
-                    <Fishmeter rating={rating} />
+    render() {
+        if (Competition.isCalibrating()) {
+            return (
+                <div id="frontend" className="container p-2">
+                    <Heading/>
+                    <div id="graphic" className="d-flex justify-content-center">
+                        <Fishmeter rating={this.state.rating}/>
+                    </div>
+                    <div id="information">
+                        <CalibrationCards competition={this.state.competition}/>
+                    </div>
                 </div>
-                <div id="information">
-                    <CompetitionCards competition={this.state.competition}/>
+            )
+        } else {
+            return (
+                <div id="frontend" className="container p-2">
+                    <Heading/>
+                    <div id="graphic" className="d-flex justify-content-center">
+                        <Fishmeter rating={this.state.rating}/>
+                    </div>
+                    <div id="information">
+                        <CompetitionCards competition={this.state.competition}/>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

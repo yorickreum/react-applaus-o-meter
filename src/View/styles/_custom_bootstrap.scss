@@ -1,1 +1,18 @@
+@font-face {
+  font-family: 'GreatLakesNf';
+  //src:  url('/fishtival/fonts/GreatLakesNF.woff') format('woff');
+  src:  url('/fonts/GreatLakesNF.woff') format('woff');
+}
+@font-face {
+  font-family: 'BebasNeue';
+  //src:  url('/fishtival/fonts/BebasNeue.woff') format('woff');
+  src:  url('/fonts/BebasNeue.woff') format('woff');
+}
+
+
+$font-family-base: 'BebasNeue';
 $font-size-base: .75rem;
+
+$primary:       #165a8a;
+$secondary:     #ffdd00;
+$info:          #323232;

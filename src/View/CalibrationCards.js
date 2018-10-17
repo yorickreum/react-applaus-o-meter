@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import RecordingDot from "./RecordingDot";
 
 
-function CompetitorCard(props) {
+function CalibrationCard(props) {
     const competitor = props.competitor;
     let cardBgClass = "bg-info";
     if( props.competition.getLeader() === competitor ) {
@@ -17,8 +17,8 @@ function CompetitorCard(props) {
                     </div>
                     <h2 className="card-title text-warning">{competitor.name}</h2>
                     <div className="card-text">
-                        <p>Verbleibende Zeit:<br/>{parseFloat(competitor.timeLeft / 1000).toFixed(1)} Sekunden</p>
-                        <p className="h2">Wertung: {parseFloat(competitor.rating * 10).toFixed(1)}</p>
+                        <p className="h2">Verbleibende Zeit:<br/>{parseFloat(competitor.timeLeft / 1000).toFixed(1)} Sekunden</p>
+                        <p className="h2">Maximum: {parseFloat(competitor.getMax()).toFixed(2)}</p>
                     </div>
                 </div>
             </div>
@@ -26,13 +26,14 @@ function CompetitorCard(props) {
     );
 }
 
-class CompetitionCards extends Component {
+class CalibrationCards extends Component {
     render() {
         return (
             <div id="competitionCardContainer" className="container">
                 <div className="row justify-content-center">
-                    {this.props.competition.competitors.map(
-                        competitor => <CompetitorCard competition={this.props.competition} competitor={competitor} />
+                    <h3 className="bg-danger text-white text-center w-100 p-2">CALIBRATION</h3>
+                    {this.props.competition.calibrationCompetitors.map(
+                        competitor => <CalibrationCard competition={this.props.competition} competitor={competitor} />
                     )}
                 </div>
             </div>
@@ -40,6 +41,6 @@ class CompetitionCards extends Component {
     }
 }
 
-export default CompetitionCards
+export default CalibrationCards
 
 

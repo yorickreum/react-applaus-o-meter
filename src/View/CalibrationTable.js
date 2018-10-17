@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import CompetitorTableRow from "./CompetitorTableRow";
+import CalibrationCompetitorTableRow from "./CalibrationCompetitorTableRow";
 
-class CompetitionTable extends Component {
+class CalibrationTable extends Component {
     render() {
         return (
             <div>
@@ -11,18 +11,21 @@ class CompetitionTable extends Component {
                     <tr>
                         <td>Status</td>
                         <td>Name</td>
+                        <td>Duration</td>
+                        <td>measured min volume</td>
+                        <td>measured max volume</td>
+                        <td>measured average</td>
                         <td>Rating</td>
-                        <td>Time left</td>
                         <td>Start</td>
                         <td>Reset</td>
                         <td>Delete</td>
                     </tr>
                     </thead>
                     <tbody>
-                    {this.props.competition.competitors.map(
+                    {this.props.competition.calibrationCompetitors.map(
                         competitor =>
                             <React.Fragment key={competitor.name}>
-                                <CompetitorTableRow competitor={competitor} addClass={((competitor === this.props.competition.getLeader()) ? 'text-danger' : '')} />
+                                <CalibrationCompetitorTableRow competitor={competitor} addClass={((competitor === this.props.competition.getLeader()) ? 'text-danger' : '')} />
                             </React.Fragment>)
                     }
                     </tbody>
@@ -32,4 +35,4 @@ class CompetitionTable extends Component {
     }
 }
 
-export default CompetitionTable
+export default CalibrationTable
