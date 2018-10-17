@@ -135,7 +135,12 @@ class _Competition {
                 }
             });
         }
-        return leadingCompetitor;
+        if (leadingCompetitor.rating !== 0) {
+            return leadingCompetitor;
+        }
+        else {
+            return null;
+        }
     }
 
     isCalibrating() {

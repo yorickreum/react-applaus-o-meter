@@ -1,20 +1,26 @@
 import {Component} from "react";
-import fish from "./fish.svg";
 import React from "react";
+import { SvgLoader, SvgProxy } from 'react-svgmt';
+import fish from './fish.svg';
+
 
 class Fishmeter extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+
     render() {
-        let fishstyle = {
-            transformOrigin: '78.875% 50%',
-            transform: 'translateX(-28.875%) rotate(' + parseFloat(this.props.rating) * 180 + 'deg)',
-            height: '600px'
+        let meterconatainerstyle = {
         };
-        return(
-            <img src={fish} className="fishmeter" alt="fish" width="400px" style={fishstyle}/>
+        let rotation = parseFloat(this.props.rating) * 180;
+        return (
+            <div className="d-flex flex-column-reverse p-4" style={meterconatainerstyle}>
+                {/*<img src={fish} className="fishmeter" alt="fish" width="400px" style={fishstyle}/>*/}
+                <SvgLoader path={fish} height="400px">
+                    <SvgProxy selector="#svgmeter" transform={"rotate(" + rotation +  " 100.1 83.082)"} />
+                </SvgLoader>
+            </div>
         );
     };
 }

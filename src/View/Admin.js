@@ -85,7 +85,7 @@ class Admin extends Component {
         event.preventDefault();
         let competition = this.state.competition;
         competition.duration = this.state.durationInput * 1000;
-        competition.maxVol = parseFloat( this.state.maxVolInput.replace(',','.') );
+        competition.maxVol = parseFloat( (this.state.maxVolInput).toString().replace(',','.') );
         this.setState({
             competition: competition
         });

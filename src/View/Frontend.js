@@ -58,14 +58,8 @@ class Frontend extends Component {
         document.title = "View | Applaus-O-Meter";
     }
 
-    tick() {
-        this.setState({
-            rating: Volumemeter.getVolume() / 1
-        })
-    }
-
     render() {
-        if (Competition.isCalibrating()) {
+        if (Competition.isCalibrating() || Competition.competitors.length === 0) {
             return (
                 <div id="frontend" className="container p-2">
                     <Heading/>

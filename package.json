@@ -16,8 +16,10 @@
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.5.1",
     "react-mic": "^12.2.2",
+    "react-motions": "^0.3.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "react-svgmt": "^1.1.6"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src/View/styles --include-path ./node_modules src/View/styles/ -o src/View/styles/",
