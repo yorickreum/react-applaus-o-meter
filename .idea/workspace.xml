@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d13eedb5-7726-41db-befb-713a532fbede" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/View/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Competition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CalibrationCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CalibrationCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/CompetitionCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CompetitionCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Fishmeter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Fishmeter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frontend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Heading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Heading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fish.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fish.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/styles/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +45,7 @@
           <entry key="gitignore" value="1" />
           <entry key="htaccess" value="1" />
           <entry key="html" value="2" />
-          <entry key="js" value="69" />
+          <entry key="js" value="71" />
           <entry key="json" value="4" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="12" />
@@ -54,7 +57,7 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="2" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="69" />
+          <entry key="JavaScript" value="71" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="12" />
@@ -65,18 +68,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="18" />
-          <entry key="js" value="20040" />
+          <entry key="js" value="20566" />
           <entry key="json" value="87" />
-          <entry key="scss" value="416" />
+          <entry key="scss" value="483" />
           <entry key="svg" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="87" />
-          <entry key="JavaScript" value="20040" />
+          <entry key="JavaScript" value="20566" />
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="SCSS" value="416" />
+          <entry key="SCSS" value="483" />
           <entry key="SVG" value="61" />
         </counts>
       </usages-collector>
@@ -87,29 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Fishmeter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/CompetitionCards.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="-30">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -118,15 +100,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/fish.svg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/View/Fishmeter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/CompetitionCards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/styles/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="570">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -143,11 +144,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Heading.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/CalibrationCards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Footer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -155,8 +171,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Frontend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="63" column="76" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+            <state relative-caret-position="75">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -164,23 +180,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/Admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+            <state relative-caret-position="510">
+              <caret line="164" column="53" selection-start-line="164" selection-start-column="53" selection-end-line="164" selection-end-column="53" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -199,8 +203,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>set</find>
-      <find>se</find>
       <find>setSt</find>
       <find>Compet</find>
       <find>string</find>
@@ -229,6 +231,8 @@
       <find>Vol</find>
       <find>leader</find>
       <find>iter</find>
+      <find>Heading</find>
+      <find>15</find>
     </findStrings>
     <replaceStrings>
       <replace>window.processor</replace>
@@ -279,21 +283,23 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/View/CompetitorTableRow.js" />
         <option value="$PROJECT_DIR$/src/View/CompetitionTable.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/View/CalibrationTable.js" />
         <option value="$PROJECT_DIR$/src/View/CalibrationCompetitorTableRow.js" />
         <option value="$PROJECT_DIR$/src/Model/CalibrationCompetitor.js" />
-        <option value="$PROJECT_DIR$/src/View/CalibrationCards.js" />
         <option value="$PROJECT_DIR$/src/View/fish.svg" />
         <option value="$PROJECT_DIR$/src/Model/Competitor.js" />
         <option value="$PROJECT_DIR$/src/Model/Competition.js" />
-        <option value="$PROJECT_DIR$/src/View/styles/index.scss" />
-        <option value="$PROJECT_DIR$/src/View/Frontend.js" />
-        <option value="$PROJECT_DIR$/src/View/Admin.js" />
-        <option value="$PROJECT_DIR$/src/View/Heading.js" />
         <option value="$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss" />
+        <option value="$PROJECT_DIR$/src/View/CalibrationCards.js" />
         <option value="$PROJECT_DIR$/src/View/Fishmeter.js" />
+        <option value="$PROJECT_DIR$/src/Footer.js" />
+        <option value="$PROJECT_DIR$/src/View/Frontend.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/View/Footer.js" />
+        <option value="$PROJECT_DIR$/src/View/styles/index.scss" />
         <option value="$PROJECT_DIR$/src/View/CompetitionCards.js" />
+        <option value="$PROJECT_DIR$/src/View/Heading.js" />
+        <option value="$PROJECT_DIR$/src/View/Admin.js" />
       </list>
     </option>
   </component>
@@ -314,7 +320,7 @@
     </packageJsonPaths>
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="92" />
     <option name="y" value="116" />
     <option name="width" value="1777" />
@@ -384,17 +390,17 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/View" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/View" />
       <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/Model" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/View" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -429,18 +435,18 @@
       <workItem from="1539525498038" duration="2915000" />
       <workItem from="1539544664069" duration="355000" />
       <workItem from="1539779946465" duration="11681000" />
-      <workItem from="1539968053659" duration="2213000" />
+      <workItem from="1539968053659" duration="5084000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85065000" />
+    <option name="totallyTimeSpent" value="87936000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="116" width="1777" height="1057" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21440922" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -455,16 +461,16 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23316061" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19911504" />
       <window_info anchor="bottom" id="File Transfer" order="12" weight="0.32953367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.2443804" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.2257721" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16744496" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -479,11 +485,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21804512" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19911504" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.32953367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.2257721" />
       <window_info anchor="right" id="Database" order="4" />
     </layout-to-restore>
   </component>
@@ -715,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CalibrationCards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Competitor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -739,52 +739,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/fish.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Frontend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="63" column="76" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/styles/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Heading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/styles/_custom_bootstrap.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -795,18 +751,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Fishmeter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="90">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CalibrationCards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Frontend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/styles/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CompetitionCards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="608">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Heading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="164" column="53" selection-start-line="164" selection-start-column="53" selection-end-line="164" selection-end-column="53" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

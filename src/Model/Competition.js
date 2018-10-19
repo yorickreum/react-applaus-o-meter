@@ -14,7 +14,7 @@ class _Competition {
 
     reset() {
         this.competitors = [];
-        this._duration = 15000;
+        this._duration = 10000;
         this.calibrationCompetitors = [];
         this.maxVol = 1;
         this.stateCallbacks = [];

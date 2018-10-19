@@ -4,7 +4,6 @@ import CompetitionCards from "./CompetitionCards";
 import CalibrationCards from "./CalibrationCards";
 import Competition from "../Model/Competition";
 import './styles/frontend.css';
-import Heading from "./Heading";
 
 class Frontend extends Component {
     constructor(props) {
@@ -62,7 +61,6 @@ class Frontend extends Component {
         if (Competition.isCalibrating() || Competition.competitors.length === 0) {
             return (
                 <div id="frontend" className="container-fluid py-2 rounded-0">
-                    <Heading/>
                     <div id="graphic" className="d-flex justify-content-center">
                         <Fishmeter rating={this.state.rating}/>
                     </div>
@@ -74,7 +72,6 @@ class Frontend extends Component {
         } else {
             return (
                 <div id="frontend" className="container-fluid py-2 rounded-0">
-                    <Heading/>
                     <div id="graphic" className="d-flex justify-content-center">
                         <Fishmeter rating={this.state.rating}/>
                     </div>

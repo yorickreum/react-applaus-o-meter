@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import RecordingDot from "./RecordingDot";
-import Competition from "../Model/Competition";
 import {Wobble} from 'react-motions';
 
 
 function CompetitorCard(props) {
     const competitor = props.competitor;
+
     let competitorNameClass = "text-primary";
     let cardBgClass = "bg-info";
-    let ratingClass = "text-danger";
+    let ratingClass = "text-secondary";
     if (props.competition.getLeader() === competitor) {
         cardBgClass = "bg-success";
         competitorNameClass = "text-secondary";
@@ -26,8 +26,8 @@ function CompetitorCard(props) {
                 </div>
                 <h2 className={"card-title " + competitorNameClass}>{competitor.name}</h2>
                 <div className="card-text">
-                    <p>Verbleibende Zeit:<br/>{parseFloat(competitor.timeLeft / 1000).toFixed(1)} Sekunden</p>
-                    <p className={"h2 " + ratingClass}>Wertung: {parseFloat(competitor.rating * 10).toFixed(1)}</p>
+                    <p><span className="timeLeftText">Verbleibende Zeit:</span><br/>{parseFloat(competitor.timeLeft / 1000).toFixed(1)} Sekunden</p>
+                    <p className={"btn btn-primary ratingText " + ratingClass}>Wertung: <span className="text-white">{parseFloat(competitor.rating * 10).toFixed(2)}</span></p>
                 </div>
             </div>
         </div>;

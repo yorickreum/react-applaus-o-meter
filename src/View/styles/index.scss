@@ -20,9 +20,21 @@ h1 {
   font-family: "GreatLakesNF";
 }
 
+h1#mainHeading {
+  font-size: #{3 * $font-size-base};
+}
+
 .card p{
   font-size: #{1.4 * $font-size-base};
 }
 .card.bg-info.text-white {
   color: #323232 !important;
+}
+
+.card .timeLeftText {
+  font-size: #{1.0 * $font-size-base};
+}
+
+footer {
+  font-size: #{.75 * $font-size-base};
 }

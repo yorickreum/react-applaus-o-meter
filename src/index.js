@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './View/styles/index.css'
 import Frontend from "./View/Frontend";
 import Heading from "./View/Heading";
+import Footer from "./View/Footer"
 
 class Areas extends Component {
 
@@ -16,7 +17,6 @@ class Areas extends Component {
     render() {
         return (
             <React.Fragment>
-                <Heading/>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-4">
@@ -55,6 +55,7 @@ class Areas extends Component {
 
 ReactDOM.render(
     <div>
+        <Heading />
         <HashRouter>
             <Switch>
                 <Route exact path="/" component={Areas}/>
@@ -62,6 +63,7 @@ ReactDOM.render(
                 <Route path="/view" component={Frontend}/>
             </Switch>
         </HashRouter>
+        <Footer />
     </div>,
     document.getElementById('root')
 );

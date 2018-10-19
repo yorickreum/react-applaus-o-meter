@@ -6331,8 +6331,17 @@ body {
 h1 {
   font-family: "GreatLakesNF"; }
 
+h1#mainHeading {
+  font-size: 4.8rem; }
+
 .card p {
   font-size: 2.24rem; }
 
 .card.bg-info.text-white {
   color: #323232 !important; }
+
+.card .timeLeftText {
+  font-size: 1.6rem; }
+
+footer {
+  font-size: 1.2rem; }
