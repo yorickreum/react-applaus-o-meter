@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d13eedb5-7726-41db-befb-713a532fbede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View/CompetitionJsonImportBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CompetitionJsonExportBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CompetitionJsonExportBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +56,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="18" />
-          <entry key="js" value="21335" />
+          <entry key="js" value="21342" />
           <entry key="json" value="87" />
           <entry key="scss" value="483" />
           <entry key="svg" value="61" />
@@ -71,7 +65,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="87" />
-          <entry key="JavaScript" value="21335" />
+          <entry key="JavaScript" value="21342" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="SCSS" value="483" />
           <entry key="SVG" value="61" />
@@ -126,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="177" column="34" lean-forward="true" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
+            <state relative-caret-position="320">
+              <caret line="176" column="42" selection-start-line="176" selection-start-column="42" selection-end-line="176" selection-end-column="42" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -427,18 +421,18 @@
       <workItem from="1539525498038" duration="2915000" />
       <workItem from="1539544664069" duration="355000" />
       <workItem from="1539779946465" duration="11681000" />
-      <workItem from="1539968053659" duration="8055000" />
+      <workItem from="1539968053659" duration="8159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90907000" />
+    <option name="totallyTimeSpent" value="91011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -453,7 +447,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19911504" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19911504" />
       <window_info anchor="bottom" id="File Transfer" order="12" weight="0.32953367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -818,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Competition.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="177" column="34" lean-forward="true" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
+        <state relative-caret-position="320">
+          <caret line="176" column="42" selection-start-line="176" selection-start-column="42" selection-end-line="176" selection-end-column="42" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

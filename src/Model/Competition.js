@@ -173,9 +173,8 @@ class _Competition {
             let comp = JSON.parse(e.target.result);
             if (comp != null) {
                 let callbacks = this.stateCallbacks;
-                this.revive(JSON.parse(e.target.result));
+                this.revive( comp );
                 this.dumpToLocalStorage();
-                console.log(comp);
                 this.stateCallbacks = callbacks;
                 this.update();
             }
