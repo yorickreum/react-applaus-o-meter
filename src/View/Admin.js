@@ -100,7 +100,7 @@ class Admin extends Component {
         return (
             <React.Fragment>
                 <Heading/>
-                <div className="container">
+                <div className="container-fluid p-5">
 
                     <header>
                         <h2>Welcome to Applaus-O-Meter administration</h2>

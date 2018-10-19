@@ -61,7 +61,7 @@ class Frontend extends Component {
     render() {
         if (Competition.isCalibrating() || Competition.competitors.length === 0) {
             return (
-                <div id="frontend" className="container p-2">
+                <div id="frontend" className="container-fluid py-2 rounded-0">
                     <Heading/>
                     <div id="graphic" className="d-flex justify-content-center">
                         <Fishmeter rating={this.state.rating}/>
@@ -73,7 +73,7 @@ class Frontend extends Component {
             )
         } else {
             return (
-                <div id="frontend" className="container p-2">
+                <div id="frontend" className="container-fluid py-2 rounded-0">
                     <Heading/>
                     <div id="graphic" className="d-flex justify-content-center">
                         <Fishmeter rating={this.state.rating}/>

@@ -135,7 +135,7 @@ class _Competition {
                 }
             });
         }
-        if (leadingCompetitor.rating !== 0) {
+        if (leadingCompetitor && leadingCompetitor.rating !== 0) {
             return leadingCompetitor;
         }
         else {

@@ -6,6 +6,23 @@
 
 // Here you can import more .scss files or write scss code.
 
+body {
+  background-color: #323232;
+  color: white;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 h1 {
   font-family: "GreatLakesNF";
+}
+
+.card p{
+  font-size: #{1.4 * $font-size-base};
+}
+.card.bg-info.text-white {
+  color: #323232 !important;
 }

@@ -17,7 +17,7 @@ class Fishmeter extends Component {
         return (
             <div className="d-flex flex-column-reverse p-4" style={meterconatainerstyle}>
                 {/*<img src={fish} className="fishmeter" alt="fish" width="400px" style={fishstyle}/>*/}
-                <SvgLoader path={fish} height="400px">
+                <SvgLoader path={fish} height="500px">
                     <SvgProxy selector="#svgmeter" transform={"rotate(" + rotation +  " 100.1 83.082)"} />
                 </SvgLoader>
             </div>
