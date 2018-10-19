@@ -4,6 +4,7 @@ import CalibrationTable from "./CalibrationTable";
 import Competition from '../Model/Competition';
 import Competitor from '../Model/Competitor';
 import CompetitionJsonExportBtn from "./CompetitionJsonExportBtn"
+import CompetitionJsonImportBtn from "./CompetitionJsonImportBtn"
 import CalibrationCompetitor from "../Model/CalibrationCompetitor";
 
 
@@ -183,6 +184,7 @@ class Admin extends Component {
 
                 <div>
                     <CompetitionJsonExportBtn competition={this.state.competition}/>
+                    <CompetitionJsonImportBtn competition={this.state.competition}/>
                 </div>
 
             </div>

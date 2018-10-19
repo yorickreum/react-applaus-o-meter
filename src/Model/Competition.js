@@ -164,6 +164,27 @@ class _Competition {
 
     /**
      *
+     * @param selectorFiles FileList
+     */
+    reviveFromFileList(selectorFiles) {
+        let file = selectorFiles[0];
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            let comp = JSON.parse(e.target.result);
+            if (comp != null) {
+                let callbacks = this.stateCallbacks;
+                this.revive(JSON.parse(e.target.result));
+                this.dumpToLocalStorage();
+                console.log(comp);
+                this.stateCallbacks = callbacks;
+                this.update();
+            }
+        }.bind(this);
+        reader.readAsText(file);
+    }
+
+    /**
+     *
      * @param data
      * @returns {_Competition}
      */
@@ -181,6 +202,7 @@ class _Competition {
             newComp.revive(comp);
             this.addCalibrationCompetitor(newComp);
         });
+        this.update();
     }
 
 }

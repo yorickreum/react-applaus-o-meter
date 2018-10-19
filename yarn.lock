@@ -6726,6 +6726,11 @@ react-dom@^16.5.1:
     prop-types "^15.6.2"
     schedule "^0.5.0"
 
+react-edit@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/react-edit/-/react-edit-6.4.1.tgz#7ff7bdc191156db300e4348e0122ae95a062758e"
+  integrity sha512-AiB2bT6DZAY1JBss/ac7xwS1DpxF0SXrUwRVegkmP0zcYE8Y1969jzLA9mlGxOu88lBQq8rkUoxmeUrh1i1T3Q==
+
 react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"

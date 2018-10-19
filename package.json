@@ -15,6 +15,7 @@
     "react": "^16.5.1",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.5.1",
+    "react-edit": "^6.4.1",
     "react-mic": "^12.2.2",
     "react-motions": "^0.3.0",
     "react-router-dom": "^4.3.1",
