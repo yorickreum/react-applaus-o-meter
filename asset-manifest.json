@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-applaus-o-meter/static/css/main.a4b3c656.chunk.css",
+    "main.js": "/react-applaus-o-meter/static/js/main.ed2e697c.chunk.js",
+    "main.js.map": "/react-applaus-o-meter/static/js/main.ed2e697c.chunk.js.map",
+    "runtime~main.js": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js",
+    "runtime~main.js.map": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js.map",
+    "static/js/2.12575381.chunk.js": "/react-applaus-o-meter/static/js/2.12575381.chunk.js",
+    "static/js/2.12575381.chunk.js.map": "/react-applaus-o-meter/static/js/2.12575381.chunk.js.map",
+    "index.html": "/react-applaus-o-meter/index.html",
+    "precache-manifest.e792dfe7bf505e0f15154d5cfd97c513.js": "/react-applaus-o-meter/precache-manifest.e792dfe7bf505e0f15154d5cfd97c513.js",
+    "service-worker.js": "/react-applaus-o-meter/service-worker.js",
+    "static/css/main.a4b3c656.chunk.css.map": "/react-applaus-o-meter/static/css/main.a4b3c656.chunk.css.map",
+    "static/media/fish.svg": "/react-applaus-o-meter/static/media/fish.2a4ff65c.svg"
+  }
+}
