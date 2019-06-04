@@ -2,7 +2,7 @@
   "name": "applaus-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://slammenimschloss.de/fishtival/",
+  "homepage": "https://yorickreum.github.io/react-applaus-o-meter/",
   "main": "index.js",
   "dependencies": {
     "babel-core": "^6.26.3",
