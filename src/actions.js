@@ -1,17 +1,18 @@
-import Competitor from "./Model/Competitor";
+import Competitor from "./entities/Competitor";
 
 let nextTodoId = 0;
 
+export const ADD_COMPETITOR = 'ADD_COMPETITOR';
+
 export const addCompetitor = (competitorName: string) => ({
-    type: 'ADD_COMPETITOR',
-    id: nextTodoId++,
+    type: ADD_COMPETITOR,
     text: competitorName
 });
 
-export const startVoting = (competitior: Competitor) => ({
+export const startVoting = (competitor: Competitor) => ({
     type: 'START_VOTING',
     id: nextTodoId++,
-    text
+    competitor: competitor
 });
 
 export const addTodo = text => ({

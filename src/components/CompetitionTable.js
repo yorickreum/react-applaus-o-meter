@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import CompetitorTableRow from "./CompetitorTableRow";
+import {connect} from "react-redux";
+import {getLeader} from "../utils/competitionUtils";
 
 class CompetitionTable extends Component {
     render() {
@@ -19,10 +21,10 @@ class CompetitionTable extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.props.competition.competitors.map(
+                    {this.props.competitors.map(
                         competitor =>
                             <React.Fragment key={competitor.name}>
-                                <CompetitorTableRow competitor={competitor} addClass={((competitor === this.props.competition.getLeader()) ? 'text-danger' : '')} />
+                                <CompetitorTableRow competitor={competitor} addClass={((competitor === getLeader()) ? 'text-danger' : '')} />
                             </React.Fragment>)
                     }
                     </tbody>
@@ -32,4 +34,8 @@ class CompetitionTable extends Component {
     }
 }
 
-export default CompetitionTable
+const mapStateToProps = state => ({
+    competitors: state.administration.competitors,
+});
+
+export default connect(mapStateToProps)(CompetitionTable);

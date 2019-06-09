@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import CalibrationCompetitorTableRow from "./CalibrationCompetitorTableRow";
+import {connect} from "react-redux";
 
 class CalibrationTable extends Component {
     render() {
@@ -22,7 +23,7 @@ class CalibrationTable extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.props.competition.calibrationCompetitors.map(
+                    {this.props.calibrationCompetitors.map(
                         competitor =>
                             <React.Fragment key={competitor.name}>
                                 <CalibrationCompetitorTableRow competitor={competitor} addClass={((competitor === this.props.competition.getLeader()) ? 'text-danger' : '')} />
@@ -35,4 +36,8 @@ class CalibrationTable extends Component {
     }
 }
 
-export default CalibrationTable
+const mapStateToProps = state => ({
+    calibrationCompetitors: state.administration.calibrationCompetitors,
+});
+
+export default connect(mapStateToProps)(CalibrationTable)

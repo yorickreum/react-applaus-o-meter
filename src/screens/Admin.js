@@ -1,36 +1,26 @@
 import React, {Component} from 'react';
-import CompetitionTable from "./CompetitionTable";
-import CalibrationTable from "./CalibrationTable";
-import Competition from '../Model/Competition';
-import Competitor from '../Model/Competitor';
-import CompetitionJsonExportBtn from "./CompetitionJsonExportBtn"
-import CompetitionJsonImportBtn from "./CompetitionJsonImportBtn"
-import CalibrationCompetitor from "../Model/CalibrationCompetitor";
+import CompetitionTable from "../components/CompetitionTable";
+import CalibrationTable from "../components/CalibrationTable";
+import Competition from '../entities/Competition';
+import Competitor from '../entities/Competitor';
+import CompetitionJsonExportBtn from "../components/CompetitionJsonExportBtn"
+import CompetitionJsonImportBtn from "../components/CompetitionJsonImportBtn"
+import CalibrationCompetitor from "../entities/CalibrationCompetitor";
+import {connect} from "react-redux";
+import {addCompetitor} from "../actions";
+import {doesCalibrationCompetitorNameAlreadyExists} from "../utils/competitionUtils";
 
 
 class Admin extends Component {
     constructor(props) {
         super(props);
 
-        let compParsed = JSON.parse(localStorage.getItem('competition'));
-        if (compParsed != null) {
-            Competition.revive(compParsed);
-        }
-
         this.state = {
             addCompetitorInput: '',
             addCalibrationCompetitorInput: 'Calibration 1',
-            durationInput: Competition.duration / 1000,
-            maxVolInput: Competition.maxVol,
-            competition: Competition,
+            durationInput: props.duration ? props.duration / 1000 : 10,
+            maxVolInput: props.maxVol,
         };
-
-        this.state.competition.stateCallbacks.push(
-            () => {
-                console.log('stateCallback');
-                this.forceUpdate();
-            }
-        );
 
         this.addCompetitor = this.addCompetitor.bind(this);
         this.addCalibrationCompetitor = this.addCalibrationCompetitor.bind(this);
@@ -60,14 +50,11 @@ class Admin extends Component {
     addCompetitor(event) {
         event.preventDefault();
         let name = this.state.addCompetitorInput;
-        if (!this.state.competition.isCompetitorNameAlreadyExists(name) && !(name === "")) {
-            let competition = this.state.competition;
-            competition.addCompetitor(new Competitor(name));
-            this.setState({
-                competition: competition
-            });
+        if (!(name === "") && !doesCalibrationCompetitorNameAlreadyExists(name)) {
+            this.props.dispatch(addCompetitor(name));
         }
     }
+
 
     addCalibrationCompetitor(event) {
         event.preventDefault();
@@ -113,7 +100,7 @@ class Admin extends Component {
                             <div className="col-2">
                                 <label
                                     htmlFor="durationInput">Duration in
-                                    seconds<br/>(currently {this.state.competition.duration / 1000} s)</label>
+                                    seconds<br/>(currently {this.props.duration / 1000} s)</label>
                             </div>
                             <div className="col-8">
                                 <input type="text" className="form-control w-100"
@@ -128,7 +115,7 @@ class Admin extends Component {
                             <div className="col-2">
                                 <label
                                     htmlFor="maxVolInput">Max volume for rating, in
-                                    [0;1]<br/>(currently: {this.state.competition.maxVol})</label>
+                                    [0;1]<br/>(currently: {this.props.maxVol})</label>
                             </div>
                             <div className="col-8">
                                 <input type="text" className="form-control w-100"
@@ -183,8 +170,8 @@ class Admin extends Component {
                 </div>
 
                 <div>
-                    <CompetitionJsonExportBtn competition={this.state.competition}/>
-                    <CompetitionJsonImportBtn competition={this.state.competition}/>
+                    {/*<CompetitionJsonExportBtn competition={this.state.competition}/>*/}
+                    {/*<CompetitionJsonImportBtn competition={this.state.competition}/>*/}
                 </div>
 
             </div>
@@ -192,4 +179,9 @@ class Admin extends Component {
     }
 }
 
-export default Admin
+const mapStateToProps = state => ({
+    duration: state.duration,
+    maxVol: state.maxVol
+});
+
+export default connect(mapStateToProps)(Admin)

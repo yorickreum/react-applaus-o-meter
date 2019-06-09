@@ -21,12 +21,13 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-svgmt": "^1.1.8",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src/View/styles --include-path ./node_modules src/View/styles/ -o src/View/styles/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/View/styles --include-path ./node_modules src/View/styles/ -o src/View/styles --watch --recursive",
-    "start-js": "react-scripts start",
+    "build-css": "node-sass-chokidar --include-path src/styles --include-path ./node_modules src/styles/ -o src/styles/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path src/styles --include-path ./node_modules src/styles/ -o src/styles --watch --recursive",
+    "start-js": "react-scripts start --inspect-brk",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",

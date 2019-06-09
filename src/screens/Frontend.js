@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import Fishmeter from "./Fishmeter";
-import CompetitionCards from "./CompetitionCards";
-import CalibrationCards from "./CalibrationCards";
-import Competition from "../Model/Competition";
-import './styles/frontend.css';
+import Fishmeter from "../components/Fishmeter";
+import CompetitionCards from "../components/CompetitionCards";
+import CalibrationCards from "../components/CalibrationCards";
+import Competition from "../entities/Competition";
+import '../styles/frontend.css';
 
 class Frontend extends Component {
     constructor(props) {

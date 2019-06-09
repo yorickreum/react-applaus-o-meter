@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route, Link, Switch} from 'react-router-dom';
-import Admin from './View/Admin';
+import {PersistGate} from 'redux-persist/integration/react'
+import {HashRouter, Link, Route, Switch} from 'react-router-dom';
+import Admin from './screens/Admin';
 import registerServiceWorker from './registerServiceWorker';
-import './View/styles/index.css'
-import Frontend from "./View/Frontend";
-import Heading from "./View/Heading";
-import Footer from "./View/Footer"
+import './styles/index.css'
+import Frontend from "./screens/Frontend";
+import Heading from "./components/Heading";
+import Footer from "./components/Footer"
 import {Provider} from "react-redux";
-import store from "./store";
+import {persistor, store} from "./store";
 
 class Areas extends Component {
 
@@ -57,15 +58,17 @@ class Areas extends Component {
 
 ReactDOM.render(
     <Provider store={store}>
-    <Heading />
-        <HashRouter>
-            <Switch>
-                <Route exact path="/" component={Areas}/>
-                <Route path="/admin" component={Admin}/>
-                <Route path="/view" component={Frontend}/>
-            </Switch>
-        </HashRouter>
-        <Footer />
+        <PersistGate loading={null} persistor={persistor}>
+            <Heading/>
+            <HashRouter>
+                <Switch>
+                    <Route exact path="/" component={Areas}/>
+                    <Route path="/admin" component={Admin}/>
+                    <Route path="/view" component={Frontend}/>
+                </Switch>
+            </HashRouter>
+            <Footer/>
+        </PersistGate>
     </Provider>,
     document.getElementById('root')
 );

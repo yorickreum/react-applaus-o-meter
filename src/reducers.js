@@ -1,5 +1,7 @@
 import {combineReducers} from 'redux'
-import Competitor from "./Model/Competitor";
+
+import Competitor from "./entities/Competitor";
+import {ADD_COMPETITOR} from "./actions";
 
 const initialState = {
     competitors: [],
@@ -10,14 +12,12 @@ const initialState = {
 
 const administration = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_COMPETITOR':
-            const newCompetitor = Competitor(action.text);
-            return [
+        case ADD_COMPETITOR:
+            const newCompetitor = new Competitor(action.text);
+            return {
                 ...state,
-                {
-                    competitors: [...state.competitors, newCompetitor]
-                }
-            ];
+                competitors: [...state.competitors, newCompetitor]
+            };
         default:
             return state;
     }

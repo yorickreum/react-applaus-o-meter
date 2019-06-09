@@ -1,7 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import { SvgLoader, SvgProxy } from 'react-svgmt';
-import fish from './fish.svg';
+import fish from '../fish.svg';
 
 
 class Fishmeter extends Component {
