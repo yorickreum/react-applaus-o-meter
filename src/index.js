@@ -7,6 +7,8 @@ import './View/styles/index.css'
 import Frontend from "./View/Frontend";
 import Heading from "./View/Heading";
 import Footer from "./View/Footer"
+import {Provider} from "react-redux";
+import store from "./store";
 
 class Areas extends Component {
 
@@ -54,8 +56,8 @@ class Areas extends Component {
 }
 
 ReactDOM.render(
-    <div>
-        <Heading />
+    <Provider store={store}>
+    <Heading />
         <HashRouter>
             <Switch>
                 <Route exact path="/" component={Areas}/>
@@ -64,7 +66,7 @@ ReactDOM.render(
             </Switch>
         </HashRouter>
         <Footer />
-    </div>,
+    </Provider>,
     document.getElementById('root')
 );
 
