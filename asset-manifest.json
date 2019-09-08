@@ -1,17 +1,16 @@
 {
   "files": {
     "main.css": "/react-applaus-o-meter/static/css/main.df8539aa.chunk.css",
-    "main.js": "/react-applaus-o-meter/static/js/main.51f259db.chunk.js",
-    "main.js.map": "/react-applaus-o-meter/static/js/main.51f259db.chunk.js.map",
+    "main.js": "/react-applaus-o-meter/static/js/main.8f2f49e8.chunk.js",
+    "main.js.map": "/react-applaus-o-meter/static/js/main.8f2f49e8.chunk.js.map",
     "runtime~main.js": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js",
     "runtime~main.js.map": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js.map",
-    "static/js/2.eb51e18c.chunk.js": "/react-applaus-o-meter/static/js/2.eb51e18c.chunk.js",
-    "static/js/2.eb51e18c.chunk.js.map": "/react-applaus-o-meter/static/js/2.eb51e18c.chunk.js.map",
+    "static/js/2.b655d351.chunk.js": "/react-applaus-o-meter/static/js/2.b655d351.chunk.js",
+    "static/js/2.b655d351.chunk.js.map": "/react-applaus-o-meter/static/js/2.b655d351.chunk.js.map",
     "index.html": "/react-applaus-o-meter/index.html",
-    "precache-manifest.776abf16ba6b335f852c2dadfdd110ee.js": "/react-applaus-o-meter/precache-manifest.776abf16ba6b335f852c2dadfdd110ee.js",
+    "precache-manifest.d006978cdb32afdfeccdca7b20f27f09.js": "/react-applaus-o-meter/precache-manifest.d006978cdb32afdfeccdca7b20f27f09.js",
     "service-worker.js": "/react-applaus-o-meter/service-worker.js",
     "static/css/main.df8539aa.chunk.css.map": "/react-applaus-o-meter/static/css/main.df8539aa.chunk.css.map",
-    "static/media/castle.svg": "/react-applaus-o-meter/static/media/castle.f860db9a.svg",
-    "static/media/fish.svg": "/react-applaus-o-meter/static/media/fish.77ad7f8b.svg"
+    "static/media/castle.svg": "/react-applaus-o-meter/static/media/castle.0543640b.svg"
   }
 }
