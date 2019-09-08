@@ -1,4 +1,4 @@
-class _Volumemeter {
+class VolumemeterUtils {
 
     constructor( clipLevel, averaging, clipLag ) {
         let AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -94,6 +94,4 @@ class _Volumemeter {
     }
 }
 
-const Volumemeter = new _Volumemeter();
-
-export default Volumemeter
+export default VolumemeterUtils

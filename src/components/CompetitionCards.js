@@ -1,73 +1,24 @@
-import React, {Component} from 'react';
-import RecordingDot from "./RecordingDot";
-import {Wobble} from 'react-motions';
+import React from 'react';
+import {connect} from "react-redux";
+import CompetitorCard from "./CompetitorCard";
 
 
-function CompetitorCard(props) {
-    const competitor = props.competitor;
-
-    let competitorNameClass = "text-primary";
-    let cardBgClass = "bg-info";
-    let ratingClass = "text-secondary";
-    if (props.competition.getLeader() === competitor) {
-        cardBgClass = "bg-success";
-        competitorNameClass = "text-secondary";
-        ratingClass = "text-secondary";
-    }
-    let bounce = false;
-    if( competitor.stoppedRecording > (Math.floor(Date.now()) - 1 * 1000) ) {
-        bounce = true;
-    }
-    let card =
-        <div className={"card text-white text-center " + cardBgClass}>
-            <div className="card-body">
-                <div>
-                    <RecordingDot isActive={competitor.isActive}/>
-                </div>
-                <h2 className={"card-title " + competitorNameClass}>{competitor.name}</h2>
-                <div className="card-text">
-                    <p><span className="timeLeftText">Verbleibende Zeit:</span><br/>{parseFloat(competitor.timeLeft / 1000).toFixed(1)} Sekunden</p>
-                    <p className={"btn btn-primary ratingText " + ratingClass}>Wertung: <span className="text-white">{parseFloat(competitor.rating * 10).toFixed(2)}</span></p>
-                </div>
+function CompetitionCards(props) {
+    return (
+        <div id="competitionCardContainer" className="container-fluid px-5">
+            <div className="row justify-content-center">
+                {props.competitorKeys.map(
+                    competitorKey => <CompetitorCard competitorKey={competitorKey}/>
+                )}
             </div>
-        </div>;
-    if (bounce) {
-        return (
-            <div className="col-3" key={competitor.name}>
-                <Wobble>
-                    {card}
-                </Wobble>
-            </div>
-        )
-    }
-    else {
-        return (
-            <div className="col-3" key={competitor.name}>
-                {card}
-            </div>
-        )
-    }
+        </div>
+    )
 }
 
-class CompetitionCards extends Component {
-    constructor(props) {
-        super(props);
-    }
+const mapStateToProps = state => ({
+    competitorKeys: state.voting.competitors.allIds,
+});
 
-    render() {
-        return (
-            <div id="competitionCardContainer" className="container-fluid px-5">
-                <div className="row justify-content-center">
-                    {this.props.competition.competitors.map(
-                        competitor => <CompetitorCard key={competitor.name} competition={this.props.competition}
-                                                      competitor={competitor} />
-                    )}
-                </div>
-            </div>
-        )
-    }
-}
-
-export default CompetitionCards
+export default connect(mapStateToProps)(CompetitionCards)
 
 

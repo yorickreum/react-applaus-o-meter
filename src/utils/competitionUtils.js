@@ -7,7 +7,7 @@ import {store} from "../store";
  */
 export function doesCalibrationCompetitorNameAlreadyExists(name) {
     let exists = false;
-    store.getState().administration.calibrationCompetitors.forEach(function (comp) {
+    store.getState().voting.calibrationCompetitors.forEach(function (comp) {
         if (name === comp.name) {
             exists = true;
         }
@@ -15,21 +15,50 @@ export function doesCalibrationCompetitorNameAlreadyExists(name) {
     return exists;
 }
 
+/**
+ *
+ * @param name
+ * @returns {boolean}
+ */
+export function doesCompetitorNameAlreadyExists(name) {
+    let exists = false;
+    const competitors = store.getState().voting.competitors;
+    for (let key in competitors) {
+        if (competitors.hasOwnProperty(key)) {
+            if (name === key) {
+                exists = true;
+            }
+        }
+    }
+    return exists;
+}
+
 export function getLeader() {
-    const competitors = store.getState().administration.competitors;
+    const competitors = store.getState().voting.competitors.allIds;
     let leadingCompetitor = null;
     if (competitors[0]) {
         leadingCompetitor = competitors[0];
-        competitors.forEach(function (comp, index, comps) {
-            if (comp.rating >= leadingCompetitor.rating) {
-                leadingCompetitor = comp;
+        competitors.forEach(function (compKey) {
+            if (getRating(compKey) >= getRating(leadingCompetitor)) {
+                leadingCompetitor = compKey;
             }
         });
     }
-    if (leadingCompetitor && leadingCompetitor.rating !== 0) {
+    if (leadingCompetitor && getRating(leadingCompetitor) !== 0) {
         return leadingCompetitor;
-    }
-    else {
+    } else {
         return null;
     }
 }
+
+export function getRating(competitorKey: string) {
+    let state = store.getState();
+    const competitor = state.voting.competitors.byId[competitorKey];
+    if (competitor.levels.length === 0) {
+        return 0;
+    } else {
+        let levelSum = competitor.levels.reduce((pv, cv) => pv + cv, 0);
+        return (levelSum / competitor.levels.length) / state.administration.maxVol;
+    }
+}
+

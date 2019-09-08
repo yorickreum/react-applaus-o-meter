@@ -8,7 +8,7 @@ class CompetitionTable extends Component {
         return (
             <div>
                 Leading competitor is displayed red.
-                <table className="table table-striped table-hover">
+                <table className="table table-dark   table-striped table-hover">
                     <thead>
                     <tr>
                         <td>Status</td>
@@ -21,10 +21,10 @@ class CompetitionTable extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.props.competitors.map(
-                        competitor =>
-                            <React.Fragment key={competitor.name}>
-                                <CompetitorTableRow competitor={competitor} addClass={((competitor === getLeader()) ? 'text-danger' : '')} />
+                    {this.props.competitors.byId && Object.keys(this.props.competitors.byId).length > 0 && Object.keys(this.props.competitors.byId).map(
+                        key =>
+                            <React.Fragment key={key}>
+                                <CompetitorTableRow competitor={key} addClass={((key === getLeader()) ? 'text-danger' : '')} />
                             </React.Fragment>)
                     }
                     </tbody>
@@ -35,7 +35,7 @@ class CompetitionTable extends Component {
 }
 
 const mapStateToProps = state => ({
-    competitors: state.administration.competitors,
+    competitors: state.voting.competitors,
 });
 
 export default connect(mapStateToProps)(CompetitionTable);

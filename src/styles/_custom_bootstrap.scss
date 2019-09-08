@@ -1,19 +1,30 @@
 @font-face {
   font-family: 'GreatLakesNf';
   //src:  url('/fishtival/fonts/GreatLakesNF.woff') format('woff');
-  src:  url('/fonts/GreatLakesNF.woff') format('woff');
+  src: url('/fonts/GreatLakesNF.woff') format('woff');
 }
+
 @font-face {
   font-family: 'BebasNeue';
   //src:  url('/fishtival/fonts/BebasNeue.woff') format('woff');
-  src:  url('/fonts/BebasNeue.woff') format('woff');
+  src: url('/fonts/BebasNeue.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'AmericanTypewriter';
+  src: url('/fonts/AmericanTypewriter.ttc') format('ttc');
 }
 
 
-$font-family-base: 'BebasNeue';
-$font-size-base: 1.6rem;
+// $font-family-base: 'BebasNeue';
+$font-family-base: 'Open Sans';
+$font-size-base: 1rem;
 
-$primary:       #165a8a;
-$secondary:     #ffdd00;
+$font-family-heading: 'AmericanTypewriter';
+
+$background: #4868ff; //#323232;
+$primary: #165a8a;
+$secondary: #ffdd00;
 //$info:          #323232;
-$info:          white;
+$info: white;
+

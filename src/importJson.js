@@ -1,4 +1,4 @@
-{
+	{
 	"competitors": [
 		{
 			"startedRecording": null,

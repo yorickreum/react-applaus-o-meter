@@ -5,7 +5,7 @@ import {HashRouter, Link, Route, Switch} from 'react-router-dom';
 import Admin from './screens/Admin';
 import registerServiceWorker from './registerServiceWorker';
 import './styles/index.css'
-import Frontend from "./screens/Frontend";
+import View from "./screens/View";
 import Heading from "./components/Heading";
 import Footer from "./components/Footer"
 import {Provider} from "react-redux";
@@ -64,7 +64,7 @@ ReactDOM.render(
                 <Switch>
                     <Route exact path="/" component={Areas}/>
                     <Route path="/admin" component={Admin}/>
-                    <Route path="/view" component={Frontend}/>
+                    <Route path="/view" component={View}/>
                 </Switch>
             </HashRouter>
             <Footer/>

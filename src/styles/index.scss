@@ -7,7 +7,7 @@
 // Here you can import more .scss files or write scss code.
 
 body {
-  background-color: #323232;
+  background-color: $background;
   color: white;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  font-family: "GreatLakesNF";
+  font-family: $font-family-heading;
 }
 
 h1#mainHeading {

@@ -2,13 +2,10 @@ import React, {Component} from 'react';
 import CompetitionTable from "../components/CompetitionTable";
 import CalibrationTable from "../components/CalibrationTable";
 import Competition from '../entities/Competition';
-import Competitor from '../entities/Competitor';
-import CompetitionJsonExportBtn from "../components/CompetitionJsonExportBtn"
-import CompetitionJsonImportBtn from "../components/CompetitionJsonImportBtn"
 import CalibrationCompetitor from "../entities/CalibrationCompetitor";
 import {connect} from "react-redux";
-import {addCompetitor} from "../actions";
-import {doesCalibrationCompetitorNameAlreadyExists} from "../utils/competitionUtils";
+import {addCompetitor, setDuration, setMaxvol, updateAllRatings} from "../actions";
+import {doesCompetitorNameAlreadyExists} from "../utils/competitionUtils";
 
 
 class Admin extends Component {
@@ -24,7 +21,7 @@ class Admin extends Component {
 
         this.addCompetitor = this.addCompetitor.bind(this);
         this.addCalibrationCompetitor = this.addCalibrationCompetitor.bind(this);
-        this.changeSettings = this.changeSettings.bind(this);
+//        this.changeSettings = this.changeSettings.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
     }
@@ -50,11 +47,10 @@ class Admin extends Component {
     addCompetitor(event) {
         event.preventDefault();
         let name = this.state.addCompetitorInput;
-        if (!(name === "") && !doesCalibrationCompetitorNameAlreadyExists(name)) {
+        if (!(name === "") && !doesCompetitorNameAlreadyExists(name)) {
             this.props.dispatch(addCompetitor(name));
         }
     }
-
 
     addCalibrationCompetitor(event) {
         event.preventDefault();
@@ -68,15 +64,31 @@ class Admin extends Component {
         }
     }
 
-    changeSettings(event) {
-        event.preventDefault();
-        let competition = this.state.competition;
-        competition.duration = this.state.durationInput * 1000;
-        competition.maxVol = parseFloat((this.state.maxVolInput).toString().replace(',', '.'));
-        this.setState({
-            competition: competition
-        });
-    }
+    // Deprecated
+    // changeSettings(event) {
+    //     event.preventDefault();
+    //     let competition = this.state.competition;
+    //     // competition.duration = this.state.durationInput * 1000;
+    //     competition.maxVol = parseFloat((this.state.maxVolInput).toString().replace(',', '.'));
+    //     this.setState({
+    //         competition: competition
+    //     });
+    // }
+
+    setDuration = () => {
+        this.props.dispatch(
+            setDuration(this.state.durationInput * 1000)
+        );
+    };
+
+    setMaxvol = () => {
+        this.props.dispatch(
+            setMaxvol(
+                parseFloat((this.state.maxVolInput).toString().replace(',', '.'))
+            )
+        );
+        this.props.dispatch(updateAllRatings());
+    };
 
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});
@@ -95,7 +107,12 @@ class Admin extends Component {
 
                 <div id="settings">
                     <h3>Settings</h3>
-                    <form onSubmit={this.changeSettings} className="form-group">
+                    <form
+                        className="form-group"
+                        onSubmit={e => {
+                            e.preventDefault()
+                        }}
+                    >
                         <div className="row">
                             <div className="col-2">
                                 <label
@@ -104,17 +121,19 @@ class Admin extends Component {
                             </div>
                             <div className="col-8">
                                 <input type="text" className="form-control w-100"
-                                       name="durationInput" value={this.state.durationInput} placeholder="duration"
+                                       name="durationInput" value={this.state.durationInput}
+                                       placeholder="duration"
                                        onChange={this.handleChange}/>
                             </div>
                             <div className="col-2">
-                                <input type="submit" className="form-control btn btn-success" value="Set!"/>
+                                <input type="button" className="form-control btn btn-success"
+                                       value="Set!" onClick={this.setDuration}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-2">
                                 <label
-                                    htmlFor="maxVolInput">Max volume for rating, in
+                                    htmlFor="maxVolInput">Max volume for rating, in range
                                     [0;1]<br/>(currently: {this.props.maxVol})</label>
                             </div>
                             <div className="col-8">
@@ -123,7 +142,8 @@ class Admin extends Component {
                                        onChange={this.handleChange}/>
                             </div>
                             <div className="col-2">
-                                <input type="submit" className="form-control btn btn-success" value="Set!"/>
+                                <input type="button" className="form-control btn btn-success"
+                                       value="Set!" onClick={this.setMaxvol}/>
                             </div>
                         </div>
                     </form>
@@ -132,7 +152,12 @@ class Admin extends Component {
 
                 <div id="competitors" className="border border-secondary p-2 bg-primary rounded">
                     <h3>Competitors</h3>
-                    <form onSubmit={this.addCompetitor} className="row form-group">
+                    <form
+                        className="row form-group"
+                        onSubmit={e => {
+                            e.preventDefault()
+                        }}
+                    >
                         <div className="col-10">
                             <input type="text" className="form-control w-100"
                                    name="addCompetitorInput" value={this.state.addCompetitorInput}
@@ -140,7 +165,8 @@ class Admin extends Component {
                                    onChange={this.handleChange}/>
                         </div>
                         <div className="col-2">
-                            <input type="submit" className="form-control btn btn-success" value="Add!"/>
+                            <input type="button" className="form-control btn btn-success"
+                                   value="Add!" onClick={this.addCompetitor}/>
                         </div>
                     </form>
 
@@ -152,7 +178,12 @@ class Admin extends Component {
 
                 <div id="calibration" className="my-4">
                     <h3>Calibration</h3>
-                    <form onSubmit={this.addCalibrationCompetitor} className="row form-group">
+                    <form
+                        className="row form-group"
+                        onSubmit={e => {
+                            e.preventDefault()
+                        }}
+                    >
                         <div className="col-10">
                             <input type="text" className="form-control w-100"
                                    name="addCalibrationCompetitorInput"
@@ -161,7 +192,8 @@ class Admin extends Component {
                                    onChange={this.handleChange}/>
                         </div>
                         <div className="col-2">
-                            <input type="submit" className="form-control btn btn-success" value="Add!"/>
+                            <input type="submit" className="form-control btn btn-success"
+                                   value="Add!"/>
                         </div>
                     </form>
                     <div>
@@ -180,8 +212,8 @@ class Admin extends Component {
 }
 
 const mapStateToProps = state => ({
-    duration: state.duration,
-    maxVol: state.maxVol
+    duration: state.administration.duration,
+    maxVol: state.administration.maxVol
 });
 
 export default connect(mapStateToProps)(Admin)
