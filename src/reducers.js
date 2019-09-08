@@ -3,13 +3,16 @@ import {combineReducers} from 'redux'
 import {
     ADD_COMPETITOR,
     DELETE_COMPETITOR,
+    HIDE_COMPETITOR,
     RESET_COMPETITOR,
     SAVE_VALUE,
     SET_DURATION,
     SET_MAXVOL,
     SET_TITLE,
+    SHOW_COMPETITOR,
     START_RECORDING,
-    STOP_RECORDING, UPDATE_RATING
+    STOP_RECORDING,
+    UPDATE_RATING
 } from "./constants";
 
 import VolumemeterUtils from "./utils/volumemeterUtils";
@@ -69,9 +72,11 @@ const voting = (state = initialStates.voting, action) => {
                         ...state.competitors.byId,
                         [action.competitorKey]: {
                             name: action.competitorKey,
+                            isVisible: true,
                             startedRecording: null,
                             stoppedRecording: null,
                             levels: [],
+                            timeLefts: [],
                             measureDuration: null,
                             timeLeft: null,
                             interval: null,
@@ -131,9 +136,11 @@ const voting = (state = initialStates.voting, action) => {
                         ...state.competitors.byId,
                         [action.competitorKey]: {
                             ...state.competitors.byId[action.competitorKey],
+                            isVisible: true,
                             startedRecording: null,
                             stoppedRecording: null,
                             levels: [],
+                            timeLefts: [],
                             measureDuration: null,
                             timeLeft: null,
                             interval: null,
@@ -141,6 +148,34 @@ const voting = (state = initialStates.voting, action) => {
                     }
                 },
                 ratings
+            };
+        case SHOW_COMPETITOR:
+            return {
+                ...state,
+                competitors: {
+                    ...state.competitors,
+                    byId: {
+                        ...state.competitors.byId,
+                        [action.competitorKey]: {
+                            ...state.competitors.byId[action.competitorKey],
+                            isVisible: true,
+                        }
+                    }
+                }
+            };
+        case HIDE_COMPETITOR:
+            return {
+                ...state,
+                competitors: {
+                    ...state.competitors,
+                    byId: {
+                        ...state.competitors.byId,
+                        [action.competitorKey]: {
+                            ...state.competitors.byId[action.competitorKey],
+                            isVisible: false,
+                        }
+                    }
+                }
             };
         case SAVE_VALUE:
             return {
@@ -155,6 +190,10 @@ const voting = (state = initialStates.voting, action) => {
                             levels: [
                                 ...state.competitors.byId[action.competitorKey].levels,
                                 action.value
+                            ],
+                            timeLefts: [
+                                ...state.competitors.byId[action.competitorKey].timeLefts,
+                                action.timeLeft
                             ],
                         }
                     }

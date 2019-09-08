@@ -48,20 +48,24 @@ function CompetitorCard(props) {
                 </div>
             </div>
         </div>;
-    if (bounce) {
-        return (
-            <div className="col-3" key={props.competitorKey}>
-                <Wobble>
+    if (competitor.isVisible) {
+        if (bounce) {
+            return (
+                <div className="col-3" key={props.competitorKey}>
+                    <Wobble>
+                        {card}
+                    </Wobble>
+                </div>
+            )
+        } else {
+            return (
+                <div className="col-3" key={props.competitorKey}>
                     {card}
-                </Wobble>
-            </div>
-        )
+                </div>
+            )
+        }
     } else {
-        return (
-            <div className="col-3" key={props.competitorKey}>
-                {card}
-            </div>
-        )
+        return <React.Fragment/>
     }
 }
 

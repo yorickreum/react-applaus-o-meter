@@ -15,6 +15,8 @@ class CompetitionTable extends Component {
                         <td>Name</td>
                         <td>Rating</td>
                         <td>Time left</td>
+                        <td>Visibility</td>
+                        <td>Data</td>
                         <td>Start</td>
                         <td>Reset</td>
                         <td>Delete</td>

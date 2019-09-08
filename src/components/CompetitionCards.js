@@ -8,7 +8,7 @@ function CompetitionCards(props) {
         <div id="competitionCardContainer" className="container-fluid px-5">
             <div className="row justify-content-center">
                 {props.competitorKeys.map(
-                    competitorKey => <CompetitorCard competitorKey={competitorKey}/>
+                    competitorKey => <CompetitorCard key={competitorKey} competitorKey={competitorKey}/>
                 )}
             </div>
         </div>

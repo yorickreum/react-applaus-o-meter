@@ -10,6 +10,7 @@ import Heading from "./components/Heading";
 import Footer from "./components/Footer"
 import {Provider} from "react-redux";
 import {persistor, store} from "./store";
+import {Helmet} from "react-helmet";
 
 class Areas extends Component {
 
@@ -59,6 +60,10 @@ class Areas extends Component {
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Applaus-O-Meter</title>
+            </Helmet>
             <Heading/>
             <HashRouter>
                 <Switch>

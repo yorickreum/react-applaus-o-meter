@@ -12,15 +12,21 @@
     "node-sass-chokidar": "^1.3.5",
     "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.12",
     "react-bootstrap-table": "^4.3.1",
+    "react-confetti": "^4.0.1",
     "react-dom": "^16.8.6",
     "react-edit": "^6.4.1",
+    "react-helmet": "^5.2.1",
     "react-mic": "^12.4.1",
     "react-motions": "^0.3.0",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-spring": "^8.0.27",
     "react-svgmt": "^1.1.8",
+    "react-use": "^12.2.0",
+    "recharts": "^1.7.1",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
@@ -31,6 +37,8 @@
     "start-js": "react-scripts start --inspect-brk",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -47,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "redux-devtools": "^3.5.0"
   }
 }

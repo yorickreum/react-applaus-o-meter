@@ -2,11 +2,13 @@ import {getRating} from "./utils/competitionUtils";
 import {
     ADD_COMPETITOR,
     DELETE_COMPETITOR,
+    HIDE_COMPETITOR,
     RESET_COMPETITOR,
     SAVE_VALUE,
     SET_DURATION,
     SET_MAXVOL,
     SET_TITLE,
+    SHOW_COMPETITOR,
     START_RECORDING,
     STOP_RECORDING,
     UPDATE_RATING
@@ -52,6 +54,16 @@ export const startCompetitor = (competitorKey: string) => {
 
 export const resetCompetitor = (competitorKey: string) => ({
     type: RESET_COMPETITOR,
+    competitorKey
+});
+
+export const showCompetitor = (competitorKey: string) => ({
+    type: SHOW_COMPETITOR,
+    competitorKey
+});
+
+export const hideCompetitor = (competitorKey: string) => ({
+    type: HIDE_COMPETITOR,
     competitorKey
 });
 

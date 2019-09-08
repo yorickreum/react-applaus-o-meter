@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import CompetitionTable from "../components/CompetitionTable";
-import CalibrationTable from "../components/CalibrationTable";
 import Competition from '../entities/Competition';
 import CalibrationCompetitor from "../entities/CalibrationCompetitor";
 import {connect} from "react-redux";
 import {addCompetitor, setDuration, setMaxvol, updateAllRatings} from "../actions";
 import {doesCompetitorNameAlreadyExists} from "../utils/competitionUtils";
+import {Link} from "react-router-dom";
 
 
 class Admin extends Component {
@@ -99,9 +99,12 @@ class Admin extends Component {
         return (
             <div className="container-fluid p-5">
 
-                <header>
+                <header className={"pb-4"}>
                     <h2>Welcome to Applaus-O-Meter administration</h2>
                     <p>To get started, add some competitors.</p>
+                    <Link to="/view" className="btn btn-primary">
+                        Open view &#8680;
+                    </Link>
                 </header>
 
 
@@ -175,31 +178,30 @@ class Admin extends Component {
                     </div>
                 </div>
 
-
-                <div id="calibration" className="my-4">
-                    <h3>Calibration</h3>
-                    <form
-                        className="row form-group"
-                        onSubmit={e => {
-                            e.preventDefault()
-                        }}
-                    >
-                        <div className="col-10">
-                            <input type="text" className="form-control w-100"
-                                   name="addCalibrationCompetitorInput"
-                                   value={this.state.addCalibrationCompetitorInput}
-                                   placeholder="Competitor name"
-                                   onChange={this.handleChange}/>
-                        </div>
-                        <div className="col-2">
-                            <input type="submit" className="form-control btn btn-success"
-                                   value="Add!"/>
-                        </div>
-                    </form>
-                    <div>
-                        <CalibrationTable competition={this.state.competition}/>
-                    </div>
-                </div>
+                {/*<div id="calibration" className="my-4">*/}
+                {/*    <h3>Calibration</h3>*/}
+                {/*    <form*/}
+                {/*        className="row form-group"*/}
+                {/*        onSubmit={e => {*/}
+                {/*            e.preventDefault()*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        <div className="col-10">*/}
+                {/*            <input type="text" className="form-control w-100"*/}
+                {/*                   name="addCalibrationCompetitorInput"*/}
+                {/*                   value={this.state.addCalibrationCompetitorInput}*/}
+                {/*                   placeholder="Competitor name"*/}
+                {/*                   onChange={this.handleChange}/>*/}
+                {/*        </div>*/}
+                {/*        <div className="col-2">*/}
+                {/*            <input type="submit" className="form-control btn btn-success"*/}
+                {/*                   value="Add!"/>*/}
+                {/*        </div>*/}
+                {/*    </form>*/}
+                {/*    <div>*/}
+                {/*        <CalibrationTable competition={this.state.competition}/>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 <div>
                     {/*<CompetitionJsonExportBtn competition={this.state.competition}/>*/}
