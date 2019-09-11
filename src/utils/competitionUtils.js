@@ -58,13 +58,14 @@ export function getRatingFromKey(competitorKey: string) {
         return 0;
     } else {
         let levelSum = competitor.levels.reduce((pv, cv) => pv + cv, 0);
-        return (levelSum / competitor.levels.length) / state.administration.maxVol;
+        const avgVol = (levelSum / competitor.levels.length);
+        return  getRatingFromVolume(avgVol);
     }
 }
 
 export function getRatingFromVolume(volume: number) {
     const state = store.getState();
     if (volume) {
-        return volume / state.administration.maxVol;
+        return (volume / state.administration.maxVol);
     }
 }

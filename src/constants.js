@@ -14,3 +14,5 @@ export const UPDATE_ALL_RATINGS = 'UPDATE_ALL_RATINGS';
 export const SET_TITLE = 'SET_TITLE';
 export const SET_DURATION = 'SET_DURATION';
 export const SET_MAXVOL = 'SET_MAXVOL';
+
+export const SWITCH_BLANK = 'SWITCH_BLANK';

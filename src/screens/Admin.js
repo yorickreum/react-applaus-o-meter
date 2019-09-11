@@ -3,10 +3,11 @@ import CompetitionTable from "../components/CompetitionTable";
 import Competition from '../entities/Competition';
 import CalibrationCompetitor from "../entities/CalibrationCompetitor";
 import {connect} from "react-redux";
-import {addCompetitor, setDuration, setMaxvol, updateAllRatings} from "../actions";
+import {addCompetitor, setDuration, setMaxvol, switchBlank, updateAllRatings} from "../actions";
 import {doesCompetitorNameAlreadyExists} from "../utils/competitionUtils";
 import {Link} from "react-router-dom";
 import ReactMicExample from "../components/ReactMicExample";
+import Form from "react-bootstrap/Form";
 
 
 class Admin extends Component {
@@ -108,10 +109,54 @@ class Admin extends Component {
                     </Link>
                 </header>
 
-                <ReactMicExample />
+                <div id="control" className="mt-4">
+                    <h3>Control</h3>
+                    <Form>
+                        <div className="row">
+                            <div className="col-2">
+                                <label
+                                    htmlFor="showBlankInput">
+                                    Show blank<br/>(currently {this.props.showBlank ? 'yes' : 'no'})
+                                </label>
+                            </div>
+                            <div className="col-8">
+                                <Form.Check
+                                    type="checkbox" /*why switch doesnt work?*/
+                                    checked={this.props.showBlank}
+                                    onChange={() => this.props.dispatch(switchBlank())}
+                                />
+                            </div>
+                        </div>
+                    </Form>
+                </div>
 
 
-                <div id="settings">
+                <div id="competitors" className="border border-secondary p-2 bg-primary rounded">
+                    <h3>Competitors</h3>
+                    <form
+                        className="row form-group"
+                        onSubmit={e => {
+                            e.preventDefault()
+                        }}
+                    >
+                        <div className="col-10">
+                            <input type="text" className="form-control w-100"
+                                   name="addCompetitorInput" value={this.state.addCompetitorInput}
+                                   placeholder="Competitor name"
+                                   onChange={this.handleChange}/>
+                        </div>
+                        <div className="col-2">
+                            <input type="button" className="form-control btn btn-success"
+                                   value="Add!" onClick={this.addCompetitor}/>
+                        </div>
+                    </form>
+
+                    <div>
+                        <CompetitionTable competition={this.state.competition}/>
+                    </div>
+                </div>
+
+                <div id="settings" className="mt-4">
                     <h3>Settings</h3>
                     <form
                         className="form-group"
@@ -154,32 +199,6 @@ class Admin extends Component {
                     </form>
                 </div>
 
-
-                <div id="competitors" className="border border-secondary p-2 bg-primary rounded">
-                    <h3>Competitors</h3>
-                    <form
-                        className="row form-group"
-                        onSubmit={e => {
-                            e.preventDefault()
-                        }}
-                    >
-                        <div className="col-10">
-                            <input type="text" className="form-control w-100"
-                                   name="addCompetitorInput" value={this.state.addCompetitorInput}
-                                   placeholder="Competitor name"
-                                   onChange={this.handleChange}/>
-                        </div>
-                        <div className="col-2">
-                            <input type="button" className="form-control btn btn-success"
-                                   value="Add!" onClick={this.addCompetitor}/>
-                        </div>
-                    </form>
-
-                    <div>
-                        <CompetitionTable competition={this.state.competition}/>
-                    </div>
-                </div>
-
                 {/*<div id="calibration" className="my-4">*/}
                 {/*    <h3>Calibration</h3>*/}
                 {/*    <form*/}
@@ -216,6 +235,7 @@ class Admin extends Component {
 }
 
 const mapStateToProps = state => ({
+    showBlank: state.control.showBlank,
     duration: state.administration.duration,
     maxVol: state.administration.maxVol
 });

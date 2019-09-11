@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 1500 807" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="100%" height="100%" viewBox="0 0 1500 807" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xml:space="preserve"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g>
         <rect id="Artboard1" x="79.864" y="-0.599" width="1342.1" height="806.95" style="fill:none;"/>
         <path d="M1418.18,776.114l-171.182,-195.277l-28.205,0.033l-151.127,158.738l0,-739.265l-196.557,0.896l0,737.509l-156.28,-297.087l-47.321,0.167l-147.815,304.345l-180.556,-663.349l-48.696,0.013l-201.711,693.369" style="fill:#fff;fill-rule:nonzero;"/>

@@ -1,6 +1,7 @@
 import React from "react";
 import {ReactMic} from "react-mic";
 
+
 class ReactMicExample extends React.Component {
     constructor(props) {
         super(props);
@@ -39,9 +40,9 @@ class ReactMicExample extends React.Component {
                     onStop={this.onStop}
                     onData={this.onData}
                     strokeColor="#000000"
-                    backgroundColor="#FF4081" />
-                <button onTouchTap={this.startRecording} type="button">Start</button>
-                <button onTouchTap={this.stopRecording} type="button">Stop</button>
+                    backgroundColor="#FF4081"/>
+                <button onClick={this.startRecording} type="button">Start</button>
+                <button onClick={this.stopRecording} type="button">Stop</button>
             </div>
         );
     }

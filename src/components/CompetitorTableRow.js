@@ -75,7 +75,7 @@ class CompetitorTableRow extends Component<{}> {
                             <Form.Check
                                 type="checkbox" /*why switch doesnt work?*/
                                 checked={competitor.isVisible}
-                                onClick={this.changeVisibility}
+                                onChange={this.changeVisibility}
                             />
                         </Form>
                     </td>

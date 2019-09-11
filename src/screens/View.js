@@ -36,7 +36,7 @@ function View(props) {
 }
 
 const mapStateToProps = state => ({
-    showBlank: state.administration.activeCompetitor,
+    showBlank: state.control.showBlank,
     activeCompetitor: state.voting.activeCompetitor,
     ratings: state.voting.ratings,
 });

@@ -1,9 +1,8 @@
-import React, {Component, FunctionComponent} from "react";
+import React, {Component} from "react";
 import {SvgLoader, SvgProxy} from 'react-svgmt';
 import castle from '../assets/castle-gradient.svg';
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
-import {recordValue} from "../actions";
 import VolumemeterUtils from "../utils/volumemeterUtils";
 import {getRatingFromVolume} from "../utils/competitionUtils";
 import {connect} from "react-redux";

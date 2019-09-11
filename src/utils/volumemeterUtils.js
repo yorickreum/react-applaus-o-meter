@@ -1,6 +1,6 @@
 class VolumemeterUtils {
 
-    constructor( clipLevel, averaging, clipLag ) {
+    constructor(clipLevel, averaging, clipLag) {
         let AudioContext = window.AudioContext || window.webkitAudioContext;
         window.audioContext = new AudioContext();
         window.processor = window.audioContext.createScriptProcessor(512);
@@ -15,7 +15,7 @@ class VolumemeterUtils {
         window.processor.connect(window.audioContext.destination);
 
         window.processor.checkClipping =
-            function(){
+            function () {
                 if (!this.clipping)
                     return false;
                 if ((this.lastClip + this.clipLag) < window.performance.now())
@@ -24,7 +24,7 @@ class VolumemeterUtils {
             };
 
         window.processor.shutdown =
-            function(){
+            function () {
                 this.disconnect();
                 this.onaudioprocess = null;
             };
@@ -65,15 +65,15 @@ class VolumemeterUtils {
         mediaStreamSource.connect(window.processor);
     }
 
-    volumeAudioProcess( event ) {
+    volumeAudioProcess(event) {
         var buf = event.inputBuffer.getChannelData(0);
         var sum = 0;
         var x;
 
         // Do a root-mean-square on the samples: sum up the squares...
-        for (var i=0; i<buf.length; i++) {
+        for (var i = 0; i < buf.length; i++) {
             x = buf[i];
-            if (Math.abs(x)>=this.clipLevel) {
+            if (Math.abs(x) >= this.clipLevel) {
                 this.clipping = true;
                 this.lastClip = window.performance.now();
             }
@@ -81,12 +81,12 @@ class VolumemeterUtils {
         }
 
         // ... then take the square root of the sum.
-        var rms =  Math.sqrt(sum / buf.length);
+        var rms = Math.sqrt(sum / buf.length);
 
         // Now smooth this out with the averaging factor applied
         // to the previous sample - take the max here because we
         // want "fast attack, slow release."
-        this.volume = Math.max(rms, this.volume*this.averaging);
+        this.volume = Math.max(rms, this.volume * this.averaging);
     }
 
     getVolume() {

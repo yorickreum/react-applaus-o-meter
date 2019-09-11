@@ -12,12 +12,14 @@ import {
     SHOW_COMPETITOR,
     START_RECORDING,
     STOP_RECORDING,
-    UPDATE_RATING
+    UPDATE_RATING,
+    SWITCH_BLANK
 } from "./constants";
 
-import VolumemeterUtils from "./utils/volumemeterUtils";
-
 const initialStates = {
+    control: {
+        showBlank: false
+    },
     administration: {
         title: 'Slammen im Schloss V',
         maxVol: 1,
@@ -53,6 +55,18 @@ const administration = (state = initialStates.administration, action) => {
             return {
                 ...state,
                 maxVol: action.maxVol
+            };
+        default:
+            return state;
+    }
+};
+
+const control = (state = initialStates.control, action) => {
+    switch (action.type) {
+        case SWITCH_BLANK:
+            return {
+                ...state,
+                showBlank: !state.showBlank,
             };
         default:
             return state;
@@ -107,7 +121,6 @@ const voting = (state = initialStates.voting, action) => {
         case START_RECORDING:
             return {
                 ...state,
-                volumemeter: new VolumemeterUtils(),
                 activeCompetitor: action.competitorKey,
                 competitors: {
                     ...state.competitors,
@@ -228,6 +241,7 @@ const voting = (state = initialStates.voting, action) => {
 };
 
 export default combineReducers({
+    control,
     administration,
     voting
 })

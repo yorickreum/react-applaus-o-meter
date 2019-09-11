@@ -1,4 +1,5 @@
 import {getRatingFromKey} from "./utils/competitionUtils";
+import {store} from "./store";
 import {
     ADD_COMPETITOR,
     DELETE_COMPETITOR,
@@ -8,6 +9,7 @@ import {
     SET_DURATION,
     SET_MAXVOL,
     SET_TITLE,
+    SWITCH_BLANK,
     SHOW_COMPETITOR,
     START_RECORDING,
     STOP_RECORDING,
@@ -15,15 +17,25 @@ import {
 } from "./constants";
 import VolumemeterUtils from "./utils/volumemeterUtils";
 
+
+export const switchBlank = () => ({
+    type: SWITCH_BLANK,
+});
+
 export const addCompetitor = (competitorKey: string) => ({
     type: ADD_COMPETITOR,
     competitorKey
 });
 
-export const deleteCompetitor = (competitorKey: string) => ({
-    type: DELETE_COMPETITOR,
-    competitorKey
-});
+export const deleteCompetitor = (competitorKey: string) => {
+    clearInterval(
+        store.getState().voting.competitors.byId[competitorKey].interval
+    );
+    return ({
+        type: DELETE_COMPETITOR,
+        competitorKey
+    });
+};
 
 export const startCompetitor = (competitorKey: string) => {
     return (dispatch, getState) => {
@@ -53,10 +65,15 @@ export const startCompetitor = (competitorKey: string) => {
     }
 };
 
-export const resetCompetitor = (competitorKey: string) => ({
-    type: RESET_COMPETITOR,
-    competitorKey
-});
+export const resetCompetitor = (competitorKey: string) => {
+    clearInterval(
+        store.getState().voting.competitors.byId[competitorKey].interval
+    );
+    return ({
+        type: RESET_COMPETITOR,
+        competitorKey
+    });
+};
 
 export const showCompetitor = (competitorKey: string) => ({
     type: SHOW_COMPETITOR,
@@ -82,6 +99,8 @@ export const startRecording
     isActive,
 });
 
+const volumemeter = new VolumemeterUtils();
+
 export const recordValue = (competitorKey: string) => {
     return (dispatch, getState) => {
         const state = getState();
@@ -94,7 +113,6 @@ export const recordValue = (competitorKey: string) => {
             (Math.floor(Date.now()) - competitor.startedRecording);
 
         if (timeLeft > 0) {
-            const volumemeter = new VolumemeterUtils();
             const value = volumemeter.getVolume();
             dispatch(saveValue(
                 competitorKey,

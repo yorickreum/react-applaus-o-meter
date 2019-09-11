@@ -7,7 +7,6 @@ import registerServiceWorker from './registerServiceWorker';
 import './styles/index.css'
 import View from "./screens/View";
 import Heading from "./components/Heading";
-import Footer from "./components/Footer"
 import {Provider} from "react-redux";
 import {persistor, store} from "./store";
 import {Helmet} from "react-helmet";
