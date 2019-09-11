@@ -24,7 +24,6 @@ const initialStates = {
         duration: 10000
     },
     voting: {
-        volumemeter: null,//new VolumemeterUtils(),
         activeCompetitor: null,
         competitors: {
             byId: {},

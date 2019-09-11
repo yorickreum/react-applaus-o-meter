@@ -1,4 +1,4 @@
-import {getRating} from "./utils/competitionUtils";
+import {getRatingFromKey} from "./utils/competitionUtils";
 import {
     ADD_COMPETITOR,
     DELETE_COMPETITOR,
@@ -13,6 +13,7 @@ import {
     STOP_RECORDING,
     UPDATE_RATING
 } from "./constants";
+import VolumemeterUtils from "./utils/volumemeterUtils";
 
 export const addCompetitor = (competitorKey: string) => ({
     type: ADD_COMPETITOR,
@@ -39,7 +40,7 @@ export const startCompetitor = (competitorKey: string) => {
                 console.log("going to record value for: " + competitorKey)
                 dispatch(recordValue(competitorKey))
             },
-            100 // ms, normally 10
+            10 // ms, normally 10
         );
 
         dispatch(startRecording(
@@ -93,7 +94,8 @@ export const recordValue = (competitorKey: string) => {
             (Math.floor(Date.now()) - competitor.startedRecording);
 
         if (timeLeft > 0) {
-            let value = state.voting.volumemeter.getVolume();
+            const volumemeter = new VolumemeterUtils();
+            const value = volumemeter.getVolume();
             dispatch(saveValue(
                 competitorKey,
                 value,
@@ -101,7 +103,7 @@ export const recordValue = (competitorKey: string) => {
             ));
             dispatch(updateRating(
                 competitorKey,
-                getRating(competitorKey),
+                getRatingFromKey(competitorKey),
             ));
         } else {
             clearInterval(interval);
@@ -120,7 +122,7 @@ export const updateAllRatings = (competitorKey: string) => {
         Object.keys(state.voting.ratings).forEach(competitorKey => {
             dispatch(updateRating(
                 competitorKey,
-                getRating(competitorKey),
+                getRatingFromKey(competitorKey),
             ));
         });
     }

@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {addCompetitor, setDuration, setMaxvol, updateAllRatings} from "../actions";
 import {doesCompetitorNameAlreadyExists} from "../utils/competitionUtils";
 import {Link} from "react-router-dom";
+import ReactMicExample from "../components/ReactMicExample";
 
 
 class Admin extends Component {
@@ -107,6 +108,8 @@ class Admin extends Component {
                     </Link>
                 </header>
 
+                <ReactMicExample />
+
 
                 <div id="settings">
                     <h3>Settings</h3>
@@ -114,8 +117,7 @@ class Admin extends Component {
                         className="form-group"
                         onSubmit={e => {
                             e.preventDefault()
-                        }}
-                    >
+                        }}>
                         <div className="row">
                             <div className="col-2">
                                 <label

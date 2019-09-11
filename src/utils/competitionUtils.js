@@ -39,20 +39,20 @@ export function getLeader() {
     if (competitors[0]) {
         leadingCompetitor = competitors[0];
         competitors.forEach(function (compKey) {
-            if (getRating(compKey) >= getRating(leadingCompetitor)) {
+            if (getRatingFromKey(compKey) >= getRatingFromKey(leadingCompetitor)) {
                 leadingCompetitor = compKey;
             }
         });
     }
-    if (leadingCompetitor && getRating(leadingCompetitor) !== 0) {
+    if (leadingCompetitor && getRatingFromKey(leadingCompetitor) !== 0) {
         return leadingCompetitor;
     } else {
         return null;
     }
 }
 
-export function getRating(competitorKey: string) {
-    let state = store.getState();
+export function getRatingFromKey(competitorKey: string) {
+    const state = store.getState();
     const competitor = state.voting.competitors.byId[competitorKey];
     if (competitor.levels.length === 0) {
         return 0;
@@ -62,3 +62,9 @@ export function getRating(competitorKey: string) {
     }
 }
 
+export function getRatingFromVolume(volume: number) {
+    const state = store.getState();
+    if (volume) {
+        return volume / state.administration.maxVol;
+    }
+}

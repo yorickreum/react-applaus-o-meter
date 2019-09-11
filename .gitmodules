@@ -1,0 +1,3 @@
+[submodule "lib/react-confetti"]
+	path = lib/react-confetti
+	url = https://github.com/yorickreum/react-confetti.git

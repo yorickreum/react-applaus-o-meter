@@ -18,7 +18,7 @@ import {
     XAxis,
     YAxis
 } from "recharts";
-import {getRating} from "../utils/competitionUtils";
+import {getRatingFromKey} from "../utils/competitionUtils";
 import Button from "react-bootstrap/Button";
 import {Modal} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
@@ -102,7 +102,7 @@ class CompetitorTableRow extends Component<{}> {
                                                     <YAxis dataKey="level" name="level"/>
                                                     <Tooltip cursor={{strokeDasharray: '3 3'}}/>
                                                     <Scatter name="Levels" data={data} fill="#8884d8"/>
-                                                    <ReferenceLine y={getRating(competitorKey)} stroke="red"/>
+                                                    <ReferenceLine y={getRatingFromKey(competitorKey)} stroke="red"/>
                                                 </ScatterChart>
                                             </ResponsiveContainer>
                                         </Modal.Body>

@@ -72,7 +72,6 @@ ReactDOM.render(
                     <Route path="/view" component={View}/>
                 </Switch>
             </HashRouter>
-            <Footer/>
         </PersistGate>
     </Provider>,
     document.getElementById('root')
