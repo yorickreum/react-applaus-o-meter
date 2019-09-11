@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-applaus-o-meter/static/css/main.df8539aa.chunk.css",
-    "main.js": "/react-applaus-o-meter/static/js/main.9e77d64c.chunk.js",
-    "main.js.map": "/react-applaus-o-meter/static/js/main.9e77d64c.chunk.js.map",
+    "main.css": "/react-applaus-o-meter/static/css/main.136a49bc.chunk.css",
+    "main.js": "/react-applaus-o-meter/static/js/main.aa8e7748.chunk.js",
+    "main.js.map": "/react-applaus-o-meter/static/js/main.aa8e7748.chunk.js.map",
     "runtime~main.js": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js",
     "runtime~main.js.map": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js.map",
-    "static/js/2.6b4ca91d.chunk.js": "/react-applaus-o-meter/static/js/2.6b4ca91d.chunk.js",
-    "static/js/2.6b4ca91d.chunk.js.map": "/react-applaus-o-meter/static/js/2.6b4ca91d.chunk.js.map",
+    "static/js/2.14bbb726.chunk.js": "/react-applaus-o-meter/static/js/2.14bbb726.chunk.js",
+    "static/js/2.14bbb726.chunk.js.map": "/react-applaus-o-meter/static/js/2.14bbb726.chunk.js.map",
     "index.html": "/react-applaus-o-meter/index.html",
-    "precache-manifest.ef249735491ff0298f3bd081e1741920.js": "/react-applaus-o-meter/precache-manifest.ef249735491ff0298f3bd081e1741920.js",
+    "precache-manifest.a0df61c802b1e4f8b7832f210eccd8e9.js": "/react-applaus-o-meter/precache-manifest.a0df61c802b1e4f8b7832f210eccd8e9.js",
     "service-worker.js": "/react-applaus-o-meter/service-worker.js",
-    "static/css/main.df8539aa.chunk.css.map": "/react-applaus-o-meter/static/css/main.df8539aa.chunk.css.map",
-    "static/media/castle.svg": "/react-applaus-o-meter/static/media/castle.0543640b.svg"
+    "static/css/main.136a49bc.chunk.css.map": "/react-applaus-o-meter/static/css/main.136a49bc.chunk.css.map",
+    "static/media/castle-gradient.svg": "/react-applaus-o-meter/static/media/castle-gradient.0a33ba1b.svg"
   }
 }
