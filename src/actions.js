@@ -2,21 +2,25 @@ import {getRatingFromKey} from "./utils/competitionUtils";
 import {store} from "./store";
 import {
     ADD_COMPETITOR,
-    DELETE_COMPETITOR,
+    ADD_ERROR,
+    DELETE_COMPETITOR, DISMISS_ALL_ERRORS,
+    DISMISS_ERROR,
     HIDE_COMPETITOR,
+    INITIATE_VOLUMEMETER,
     RESET_COMPETITOR,
     SAVE_VALUE,
     SET_DURATION,
     SET_MAXVOL,
     SET_TITLE,
-    SWITCH_BLANK,
     SHOW_COMPETITOR,
     START_RECORDING,
     STOP_RECORDING,
+    SWITCH_BLANK,
     UPDATE_RATING
 } from "./constants";
 import VolumemeterUtils from "./utils/volumemeterUtils";
 
+let volumemeter: VolumemeterUtils = null;
 
 export const switchBlank = () => ({
     type: SWITCH_BLANK,
@@ -41,15 +45,11 @@ export const startCompetitor = (competitorKey: string) => {
     return (dispatch, getState) => {
         const state = getState();
 
-        console.log(competitorKey + ' starts measuring!');
-        console.log('duration: ' + state.administration.duration);
-
         let timestamp = Math.floor(Date.now());
         const startedRecording = parseInt(timestamp, 10);
 
         const interval = setInterval(
             () => {
-                console.log("going to record value for: " + competitorKey)
                 dispatch(recordValue(competitorKey))
             },
             10 // ms, normally 10
@@ -99,8 +99,6 @@ export const startRecording
     isActive,
 });
 
-const volumemeter = new VolumemeterUtils();
-
 export const recordValue = (competitorKey: string) => {
     return (dispatch, getState) => {
         const state = getState();
@@ -113,16 +111,23 @@ export const recordValue = (competitorKey: string) => {
             (Math.floor(Date.now()) - competitor.startedRecording);
 
         if (timeLeft > 0) {
-            const value = volumemeter.getVolume();
-            dispatch(saveValue(
-                competitorKey,
-                value,
-                timeLeft,
-            ));
-            dispatch(updateRating(
-                competitorKey,
-                getRatingFromKey(competitorKey),
-            ));
+            const volume = VolumemeterUtils.getVolume();
+            if (volume !== null) {
+                dispatch(saveValue(
+                    competitorKey,
+                    volume,
+                    timeLeft,
+                ));
+                dispatch(updateRating(
+                    competitorKey,
+                    getRatingFromKey(competitorKey),
+                ));
+            } else {
+                dispatch(addError(
+                    new Date(),
+                    "Volumemeter not initialized!"
+                ))
+            }
         } else {
             clearInterval(interval);
             const stoppedRecording = Math.floor(Date.now());
@@ -186,3 +191,25 @@ export const setMaxvol = (maxVol: number) => ({
     type: SET_MAXVOL,
     maxVol
 });
+
+export const addError = (time: Date, text: string) => ({
+    type: ADD_ERROR,
+    text,
+    time,
+});
+
+export const dismissError = (key: number) => ({
+    type: DISMISS_ERROR,
+    key,
+});
+
+export const dismissAllErrors = () => ({
+    type: DISMISS_ALL_ERRORS,
+});
+
+export const initiateVolumemeter = () => {
+    VolumemeterUtils.initiate();
+    return ({
+        type: INITIATE_VOLUMEMETER,
+    });
+};

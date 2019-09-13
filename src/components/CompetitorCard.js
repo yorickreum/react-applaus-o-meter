@@ -5,9 +5,6 @@ import {connect} from "react-redux";
 import {getLeader} from "../utils/competitionUtils";
 
 function CompetitorCard(props) {
-    console.log("competitor: " + props.competitorKey);
-    console.log("competitors: ");
-    console.log(props.competitors);
     const competitor = props.competitors[props.competitorKey];
 
     let competitorNameClass = "text-primary";

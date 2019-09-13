@@ -3,11 +3,19 @@ import CompetitionTable from "../components/CompetitionTable";
 import Competition from '../entities/Competition';
 import CalibrationCompetitor from "../entities/CalibrationCompetitor";
 import {connect} from "react-redux";
-import {addCompetitor, setDuration, setMaxvol, switchBlank, updateAllRatings} from "../actions";
+import {
+    addCompetitor,
+    addError, dismissAllErrors, initiateVolumemeter,
+    setDuration,
+    setMaxvol,
+    switchBlank,
+    updateAllRatings
+} from "../actions";
 import {doesCompetitorNameAlreadyExists} from "../utils/competitionUtils";
 import {Link} from "react-router-dom";
-import ReactMicExample from "../components/ReactMicExample";
 import Form from "react-bootstrap/Form";
+import Errors from "../components/Errors";
+import Button from "react-bootstrap/Button";
 
 
 class Admin extends Component {
@@ -51,6 +59,13 @@ class Admin extends Component {
         let name = this.state.addCompetitorInput;
         if (!(name === "") && !doesCompetitorNameAlreadyExists(name)) {
             this.props.dispatch(addCompetitor(name));
+        } else {
+            this.props.dispatch(
+                addError(
+                    new Date(),
+                    "Error adding competitor. Does name already exist?"
+                )
+            );
         }
     }
 
@@ -100,6 +115,7 @@ class Admin extends Component {
     render() {
         return (
             <div className="container-fluid p-5">
+                <Errors/>
 
                 <header className={"pb-4"}>
                     <h2>Welcome to Applaus-O-Meter administration</h2>
@@ -115,11 +131,43 @@ class Admin extends Component {
                         <div className="row">
                             <div className="col-2">
                                 <label
+                                    htmlFor="initiateVolumeter">
+                                    Initiate Volumemeter
+                                </label>
+                            </div>
+                            <div className="col-8">
+                                <Button
+                                    variant="secondary"
+                                    onClick={() => this.props.dispatch(initiateVolumemeter())}
+                                >
+                                    Initiate Volumemeter
+                                </Button>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-2">
+                                <label
+                                    htmlFor="dismissErrors">
+                                    Dismiss all errors
+                                </label>
+                            </div>
+                            <div className="col-8">
+                                <Button
+                                    variant="danger"
+                                    onClick={() => this.props.dispatch(dismissAllErrors())}
+                                >
+                                    Dismiss all errors
+                                </Button>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-2">
+                                <label
                                     htmlFor="showBlankInput">
                                     Show blank<br/>(currently {this.props.showBlank ? 'yes' : 'no'})
                                 </label>
                             </div>
-                            <div className="col-8">
+                            <div className="col-8 d-flex align-items-center">
                                 <Form.Check
                                     type="checkbox" /*why switch doesnt work?*/
                                     checked={this.props.showBlank}

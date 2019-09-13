@@ -16,3 +16,9 @@ export const SET_DURATION = 'SET_DURATION';
 export const SET_MAXVOL = 'SET_MAXVOL';
 
 export const SWITCH_BLANK = 'SWITCH_BLANK';
+
+export const ADD_ERROR = 'ADD_ERROR';
+export const DISMISS_ERROR = 'DISMISS_ERROR';
+export const DISMISS_ALL_ERRORS = 'DISMISS_ALL_ERRORS';
+
+export const INITIATE_VOLUMEMETER = 'INITIATE_VOLUMEMETER';

@@ -3,9 +3,10 @@ import {SvgLoader, SvgProxy} from 'react-svgmt';
 import castle from '../assets/castle-gradient.svg';
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
-import VolumemeterUtils from "../utils/volumemeterUtils";
 import {getRatingFromVolume} from "../utils/competitionUtils";
 import {connect} from "react-redux";
+import VolumemeterUtils from "../utils/volumemeterUtils";
+import {initiateVolumemeter} from "../actions";
 
 
 type State = {
@@ -17,11 +18,13 @@ class CastlemeterComponent extends Component<{}, State> {
 
     constructor(props: P, context: any) {
         super(props, context);
-        this.volumemeter = new VolumemeterUtils();
         this.state = {
             interval: null,
             rating: 0,
         };
+    }
+
+    componentDidMount(): void {
         this.checkRating();
     }
 
@@ -33,24 +36,32 @@ class CastlemeterComponent extends Component<{}, State> {
         const isActive = this.props.isActive;
         if (!isActive) {
             if (this.state.interval === null) {
-                const interval = setInterval(
-                    () => {
-                        let volume = this.volumemeter.getVolume();
-                        this.setState({
-                            rating: getRatingFromVolume(volume),
-                        });
-                    },
-                    50 // ms, normally 10
-                );
-                this.setState({
-                    interval,
-                });
+                this.props.dispatch(initiateVolumemeter());
+                if (this.props.isInitialized) {
+                    const interval = setInterval(
+                        () => {
+                            const volume = VolumemeterUtils.getVolume();
+                            if (volume !== null) {
+                                this.setState({
+                                    rating: getRatingFromVolume(volume) * 0.1,
+                                });
+                            }
+                        },
+                        100 // ms, normally 10
+                    );
+                    this.setState({
+                        interval,
+                    });
+                }
             }
         } else {
             if (this.state.interval) {
                 clearInterval(this.state.interval);
+                this.setState({
+                    interval: null,
+                })
             }
-            if (this.state.interval !== null && this.props.rating !== this.state.rating) {
+            if (this.props.rating !== this.state.rating) {
                 this.setState({
                     interval: null,
                     rating: this.props.rating
@@ -61,7 +72,6 @@ class CastlemeterComponent extends Component<{}, State> {
 
     render() {
         const isActive = this.props.isActive;
-        let rotation = -parseFloat(this.props.rating) * 90 - 45;
 
         const shift = this.state.rating > 0 ? (-this.state.rating) * 786 : 0;
 
@@ -74,7 +84,7 @@ class CastlemeterComponent extends Component<{}, State> {
                     width={this.props.width}
                     height={this.props.height}
                     gravity={isActive ? this.state.rating : 0.01}
-                    wind={isActive ? this.state.rating * 0.5 : 0}
+                    wind={isActive ? this.state.rating * 0.1 : 0}
                     recycle={true}
                     canvasRef={undefined}
                 />
@@ -96,6 +106,8 @@ function Castlemeter(props) {
     return <CastlemeterComponent width={width} height={height} {...props} />;
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    isInitialized: state.voting.isInitialized
+});
 
 export default connect(mapStateToProps)(Castlemeter);

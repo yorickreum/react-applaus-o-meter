@@ -22,10 +22,10 @@ export function doesCalibrationCompetitorNameAlreadyExists(name) {
  */
 export function doesCompetitorNameAlreadyExists(name) {
     let exists = false;
-    const competitors = store.getState().voting.competitors;
-    for (let key in competitors) {
-        if (competitors.hasOwnProperty(key)) {
-            if (name === key) {
+    const competitors = store.getState().voting.competitors.byId;
+    if (competitors) {
+        for (const key of Object.keys(competitors)) {
+            if (competitors[key].name === name) {
                 exists = true;
             }
         }
@@ -59,7 +59,7 @@ export function getRatingFromKey(competitorKey: string) {
     } else {
         let levelSum = competitor.levels.reduce((pv, cv) => pv + cv, 0);
         const avgVol = (levelSum / competitor.levels.length);
-        return  getRatingFromVolume(avgVol);
+        return getRatingFromVolume(avgVol);
     }
 }
 
@@ -67,5 +67,16 @@ export function getRatingFromVolume(volume: number) {
     const state = store.getState();
     if (volume) {
         return (volume / state.administration.maxVol);
+    }
+}
+
+export function getAverageVolumeFromKey(competitorKey: string) {
+    const state = store.getState();
+    const competitor = state.voting.competitors.byId[competitorKey];
+    if (competitor.levels.length === 0) {
+        return 0;
+    } else {
+        let levelSum = competitor.levels.reduce((pv, cv) => pv + cv, 0);
+        return (levelSum / competitor.levels.length);
     }
 }

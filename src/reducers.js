@@ -13,10 +13,13 @@ import {
     START_RECORDING,
     STOP_RECORDING,
     UPDATE_RATING,
-    SWITCH_BLANK
+    SWITCH_BLANK, ADD_ERROR, DISMISS_ERROR, INITIATE_VOLUMEMETER, DISMISS_ALL_ERRORS
 } from "./constants";
 
 const initialStates = {
+    errors: {
+        byId: {}
+    },
     control: {
         showBlank: false
     },
@@ -26,12 +29,9 @@ const initialStates = {
         duration: 10000
     },
     voting: {
+        isInitialized: false,
         activeCompetitor: null,
         competitors: {
-            byId: {},
-            allIds: []
-        },
-        calibrationCompetitors: {
             byId: {},
             allIds: []
         },
@@ -61,6 +61,37 @@ const administration = (state = initialStates.administration, action) => {
     }
 };
 
+const errors = (state = initialStates.errors, action) => {
+    switch (action.type) {
+        case ADD_ERROR:
+            return {
+                ...state,
+                byId: {
+                    ...state.byId,
+                    [action.time.getTime()]: {
+                        text: action.text,
+                        time: action.time,
+                    }
+                }
+            };
+        case DISMISS_ALL_ERRORS:
+            return {
+                ...state,
+                byId: {}
+            };
+        case DISMISS_ERROR:
+            const byId = {...state.byId};
+            byId[action.key] = undefined;
+            Object.keys(byId).forEach(key => byId[key] === undefined ? delete byId[key] : '');
+            return {
+                ...state,
+                byId
+            };
+        default:
+            return state;
+    }
+};
+
 const control = (state = initialStates.control, action) => {
     switch (action.type) {
         case SWITCH_BLANK:
@@ -76,6 +107,11 @@ const control = (state = initialStates.control, action) => {
 const voting = (state = initialStates.voting, action) => {
     let ratings;
     switch (action.type) {
+        case INITIATE_VOLUMEMETER:
+            return {
+                ...state,
+                isInitialized: true
+            };
         case ADD_COMPETITOR:
             return {
                 ...state,
@@ -214,7 +250,7 @@ const voting = (state = initialStates.voting, action) => {
         case STOP_RECORDING:
             return {
                 ...state,
-                activeCompetitor: null,
+                activeCompetitor: "",
                 competitors: {
                     ...state.competitors,
                     byId: {
@@ -243,5 +279,6 @@ const voting = (state = initialStates.voting, action) => {
 export default combineReducers({
     control,
     administration,
-    voting
+    voting,
+    errors,
 })

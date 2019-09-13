@@ -10,6 +10,7 @@ import Heading from "./components/Heading";
 import {Provider} from "react-redux";
 import {persistor, store} from "./store";
 import {Helmet} from "react-helmet";
+import Errors from "./components/Errors";
 
 class Areas extends Component {
 
@@ -31,7 +32,8 @@ class Areas extends Component {
                                             <li>Teilnehmner anlegen und verwalten</li>
                                             <li>Abstimmungen starten</li>
                                         </ul>
-                                        <Link to="/admin" className="btn btn-primary">Hier entlang &#8680;</Link>
+                                        <Link to="/admin" className="btn btn-primary">Hier
+                                            entlang &#8680;</Link>
                                     </div>
                                 </div>
                             </div>
@@ -42,9 +44,11 @@ class Areas extends Component {
                                     <h2 className="card-title text-primary pb-3">Abstimmung</h2>
                                     <div className="card-text">
                                         <p>
-                                            Zum Beispiel in neuem Fenster öffnen und auf Beamer zeigen.
+                                            Zum Beispiel in neuem Fenster öffnen und auf Beamer
+                                            zeigen.
                                         </p>
-                                        <Link to="/view" className="btn btn-primary">Hier entlang &#8680;</Link>
+                                        <Link to="/view" className="btn btn-primary">Hier
+                                            entlang &#8680;</Link>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +64,7 @@ ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             <Helmet>
-                <meta charSet="utf-8" />
+                <meta charSet="utf-8"/>
                 <title>Applaus-O-Meter</title>
             </Helmet>
             <Heading/>

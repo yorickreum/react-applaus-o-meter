@@ -13,6 +13,8 @@ function View(props) {
     if (activeCompetitor) {
         isActive = true;
         rating = props.ratings[activeCompetitor];
+    } else {
+
     }
     return (
         <React.Fragment>
