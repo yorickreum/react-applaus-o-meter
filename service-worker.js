@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-applaus-o-meter/precache-manifest.e29eab6332bb9e34289d647dcd71fd25.js"
+  "/react-applaus-o-meter/precache-manifest.49db11f20a71a2c5fb541d48933b4a8c.js"
 );
 
 self.addEventListener('message', (event) => {
