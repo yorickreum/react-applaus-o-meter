@@ -2,7 +2,7 @@ import React from "react";
 import RecordingDot from "./RecordingDot";
 import {Wobble} from "react-motions";
 import {connect} from "react-redux";
-import {getLeader} from "../utils/competitionUtils";
+import {getVisibleLeader} from "../utils/competitionUtils";
 
 function CompetitorCard(props) {
     const competitor = props.competitors[props.competitorKey];
@@ -10,7 +10,7 @@ function CompetitorCard(props) {
     let competitorNameClass = "text-primary";
     let cardBgClass = "bg-info";
     let ratingClass = "text-secondary";
-    if (getLeader() === props.competitorKey) {
+    if (getVisibleLeader() === props.competitorKey) {
         cardBgClass = "bg-success";
         competitorNameClass = "text-secondary";
         ratingClass = "text-secondary";

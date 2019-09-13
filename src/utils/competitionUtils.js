@@ -51,6 +51,30 @@ export function getLeader() {
     }
 }
 
+export function getVisibleLeader() {
+    const competitorKeys = store.getState().voting.competitors.allIds;
+    let leadingCompetitor = null;
+    if (competitorKeys[0] && isVisibleFromKey(competitorKeys[0])) {
+        leadingCompetitor = competitorKeys[0];
+        competitorKeys.forEach(function (compKey) {
+            if (isVisibleFromKey(compKey)
+                && getRatingFromKey(compKey) >= getRatingFromKey(leadingCompetitor)) {
+                leadingCompetitor = compKey;
+            }
+        });
+    }
+    if (leadingCompetitor && getRatingFromKey(leadingCompetitor) !== 0) {
+        return leadingCompetitor;
+    } else {
+        return null;
+    }
+}
+
+export function isVisibleFromKey(competitorKey:string) {
+    const competitors = store.getState().voting.competitors.byId;
+    return competitors[competitorKey] && competitors[competitorKey].isVisible;
+}
+
 export function getRatingFromKey(competitorKey: string) {
     const state = store.getState();
     const competitor = state.voting.competitors.byId[competitorKey];
