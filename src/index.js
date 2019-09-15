@@ -10,7 +10,6 @@ import Heading from "./components/Heading";
 import {Provider} from "react-redux";
 import {persistor, store} from "./store";
 import {Helmet} from "react-helmet";
-import Errors from "./components/Errors";
 
 class Areas extends Component {
 

@@ -3,7 +3,8 @@ import {store} from "./store";
 import {
     ADD_COMPETITOR,
     ADD_ERROR,
-    DELETE_COMPETITOR, DISMISS_ALL_ERRORS,
+    DELETE_COMPETITOR,
+    DISMISS_ALL_ERRORS,
     DISMISS_ERROR,
     HIDE_COMPETITOR,
     INITIATE_VOLUMEMETER,
@@ -19,8 +20,6 @@ import {
     UPDATE_RATING
 } from "./constants";
 import VolumemeterUtils from "./utils/volumemeterUtils";
-
-let volumemeter: VolumemeterUtils = null;
 
 export const switchBlank = () => ({
     type: SWITCH_BLANK,
@@ -43,25 +42,39 @@ export const deleteCompetitor = (competitorKey: string) => {
 
 export const startCompetitor = (competitorKey: string) => {
     return (dispatch, getState) => {
+
+        dispatch(initiateVolumemeter());
+
         const state = getState();
 
-        let timestamp = Math.floor(Date.now());
-        const startedRecording = parseInt(timestamp, 10);
+        if (state.voting.competitors.byId[competitorKey].timeLefts.length > 0) {
+            dispatch(addError(
+                new Date(),
+                "Competitor was already started once."
+            ));
+        } else {
+            let timestamp = Math.floor(Date.now());
+            const startedRecording = parseInt(timestamp, 10);
 
-        const interval = setInterval(
-            () => {
-                dispatch(recordValue(competitorKey))
-            },
-            10 // ms, normally 10
-        );
+            let counter = 0;
+            const interval = setInterval(
+                () => {
+                    if (counter > 15) { // @TODO hacky, don't use first 10 values
+                        dispatch(recordValue(competitorKey));
+                    }
+                    counter++;
+                },
+                10 // ms, normally 10
+            );
 
-        dispatch(startRecording(
-            competitorKey,
-            interval,
-            state.administration.duration,
-            startedRecording,
-            true
-        ));
+            dispatch(startRecording(
+                competitorKey,
+                interval,
+                state.administration.duration,
+                startedRecording,
+                true
+            ));
+        }
     }
 };
 

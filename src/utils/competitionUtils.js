@@ -53,8 +53,8 @@ export function getLeader() {
 
 export function getVisibleLeader() {
     const competitorKeys = store.getState().voting.competitors.allIds;
-    let leadingCompetitor = null;
-    if (competitorKeys[0] && isVisibleFromKey(competitorKeys[0])) {
+    let leadingCompetitor = getFirstVisibleCompetitorKey();
+    if (leadingCompetitor) {
         leadingCompetitor = competitorKeys[0];
         competitorKeys.forEach(function (compKey) {
             if (isVisibleFromKey(compKey)
@@ -70,9 +70,19 @@ export function getVisibleLeader() {
     }
 }
 
-export function isVisibleFromKey(competitorKey:string) {
+function isVisibleFromKey(competitorKey:string) {
     const competitors = store.getState().voting.competitors.byId;
     return competitors[competitorKey] && competitors[competitorKey].isVisible;
+}
+
+function getFirstVisibleCompetitorKey() {
+    const competitorKeys = store.getState().voting.competitors.allIds;
+    for (const competitorKey of competitorKeys) {
+        if (isVisibleFromKey(competitorKey)) {
+            return competitorKey;
+        }
+    }
+    return null;
 }
 
 export function getRatingFromKey(competitorKey: string) {

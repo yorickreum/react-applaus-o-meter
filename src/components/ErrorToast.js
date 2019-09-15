@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import Toast from "react-bootstrap/Toast";
 import {connect} from "react-redux";
 import {dismissError} from "../actions";

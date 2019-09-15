@@ -5,7 +5,9 @@ import CalibrationCompetitor from "../entities/CalibrationCompetitor";
 import {connect} from "react-redux";
 import {
     addCompetitor,
-    addError, dismissAllErrors, initiateVolumemeter,
+    addError,
+    dismissAllErrors,
+    initiateVolumemeter,
     setDuration,
     setMaxvol,
     switchBlank,
@@ -138,6 +140,7 @@ class Admin extends Component {
                             <div className="col-8">
                                 <Button
                                     variant="secondary"
+                                    size="sm"
                                     onClick={() => this.props.dispatch(initiateVolumemeter())}
                                 >
                                     Initiate Volumemeter
@@ -154,6 +157,7 @@ class Admin extends Component {
                             <div className="col-8">
                                 <Button
                                     variant="danger"
+                                    size="sm"
                                     onClick={() => this.props.dispatch(dismissAllErrors())}
                                 >
                                     Dismiss all errors
