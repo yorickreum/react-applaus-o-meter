@@ -8820,8 +8820,10 @@ react-bootstrap@^1.0.0-beta.12:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-"react-confetti@file:./src/lib/react-confetti":
-  version "2.4.1"
+react-confetti@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-confetti/-/react-confetti-4.0.1.tgz#f9e76b198ce02f1c13809a1d1ec1bc92f5450dde"
+  integrity sha512-uQrb1Q4p8Wg3xyxSGtsIxdd+hOd3jRNpVq5qET6m9B+fihsjF7mHbMngoiziya3DZtstaqCBPpTcyByXLu8CnQ==
   dependencies:
     tween-functions "^1.2.0"
 

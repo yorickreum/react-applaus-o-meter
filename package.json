@@ -14,7 +14,7 @@
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-bootstrap-table": "^4.3.1",
-    "react-confetti": "file:./lib/react-confetti/",
+    "react-confetti": "^4.0.1",
     "react-dom": "^16.8.6",
     "react-edit": "^6.4.1",
     "react-helmet": "^5.2.1",
