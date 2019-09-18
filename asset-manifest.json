@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-applaus-o-meter/static/css/main.68359ae4.chunk.css",
+    "main.css": "/react-applaus-o-meter/static/css/main.a7002cdf.chunk.css",
     "main.js": "/react-applaus-o-meter/static/js/main.8528659c.chunk.js",
     "main.js.map": "/react-applaus-o-meter/static/js/main.8528659c.chunk.js.map",
     "runtime~main.js": "/react-applaus-o-meter/static/js/runtime~main.bf68de7c.js",
@@ -8,9 +8,9 @@
     "static/js/2.e23ccdf1.chunk.js": "/react-applaus-o-meter/static/js/2.e23ccdf1.chunk.js",
     "static/js/2.e23ccdf1.chunk.js.map": "/react-applaus-o-meter/static/js/2.e23ccdf1.chunk.js.map",
     "index.html": "/react-applaus-o-meter/index.html",
-    "precache-manifest.aac1b663e14ba9ba7ffe5ad895b909db.js": "/react-applaus-o-meter/precache-manifest.aac1b663e14ba9ba7ffe5ad895b909db.js",
+    "precache-manifest.b5cb10dacb41f2d101517ca2e9fa425e.js": "/react-applaus-o-meter/precache-manifest.b5cb10dacb41f2d101517ca2e9fa425e.js",
     "service-worker.js": "/react-applaus-o-meter/service-worker.js",
-    "static/css/main.68359ae4.chunk.css.map": "/react-applaus-o-meter/static/css/main.68359ae4.chunk.css.map",
+    "static/css/main.a7002cdf.chunk.css.map": "/react-applaus-o-meter/static/css/main.a7002cdf.chunk.css.map",
     "static/media/castle-gradient.svg": "/react-applaus-o-meter/static/media/castle-gradient.1b3f0f42.svg"
   }
 }

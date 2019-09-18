@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2651cc535cceb21450f2d989cc25faf0",
+    "revision": "74d8505d9dd6c4c4737b3c13f6a756d2",
     "url": "/react-applaus-o-meter/index.html"
   },
   {
-    "revision": "87259421deb9b53dbaf4",
-    "url": "/react-applaus-o-meter/static/css/main.68359ae4.chunk.css"
+    "revision": "893f3edefee634c71c02",
+    "url": "/react-applaus-o-meter/static/css/main.a7002cdf.chunk.css"
   },
   {
     "revision": "4f52f4a68e29c123944c",
     "url": "/react-applaus-o-meter/static/js/2.e23ccdf1.chunk.js"
   },
   {
-    "revision": "87259421deb9b53dbaf4",
+    "revision": "893f3edefee634c71c02",
     "url": "/react-applaus-o-meter/static/js/main.8528659c.chunk.js"
   },
   {
