@@ -1,18 +1,20 @@
+$baseurl: 'https://yorickreum.github.io/react-applaus-o-meter';
+
 @font-face {
   font-family: 'GreatLakesNf';
   //src:  url('/fishtival/fonts/GreatLakesNF.woff') format('woff');
-  src: url('/fonts/GreatLakesNF.woff') format('woff');
+  src: url($baseurl + '/fonts/GreatLakesNF.woff') format('woff');
 }
 
 @font-face {
   font-family: 'BebasNeue';
   //src:  url('/fishtival/fonts/BebasNeue.woff') format('woff');
-  src: url('/fonts/BebasNeue.woff') format('woff');
+  src: url($baseurl + '/fonts/BebasNeue.woff') format('woff');
 }
 
 @font-face {
   font-family: 'AmericanTypewriter';
-  src: url('/fonts/AmericanTypewriter.woff') format('woff');
+  src: url($baseurl + '/fonts/AmericanTypewriter.woff') format('woff');
 }
 
 
