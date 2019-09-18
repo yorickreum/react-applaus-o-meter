@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'GreatLakesNf';
-  src: url("/fonts/GreatLakesNF.woff") format("woff"); }
+  src: url("https://yorickreum.github.io/react-applaus-o-meter/fonts/GreatLakesNF.woff") format("woff"); }
 
 @font-face {
   font-family: 'BebasNeue';
-  src: url("/fonts/BebasNeue.woff") format("woff"); }
+  src: url("https://yorickreum.github.io/react-applaus-o-meter/fonts/BebasNeue.woff") format("woff"); }
 
 @font-face {
   font-family: 'AmericanTypewriter';
-  src: url("/fonts/AmericanTypewriter.woff") format("woff"); }
+  src: url("https://yorickreum.github.io/react-applaus-o-meter/fonts/AmericanTypewriter.woff") format("woff"); }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
