@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/yorickreum/react-applaus-o-meter.png?branch=master)](https://travis-ci.org/yorickreum/react-applaus-o-meter)
+
+
 # Applaus-O-Meter
 ## as a React web application
 
