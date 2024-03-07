@@ -4,7 +4,7 @@ import {PersistGate} from 'redux-persist/integration/react'
 import {HashRouter, Link, Route, Routes} from 'react-router-dom';
 import Admin from './screens/Admin';
 import registerServiceWorker from './registerServiceWorker';
-import './styles/index.css'
+import './styles/index.scss'
 import View from "./screens/View";
 import Heading from "./components/Heading";
 import {Provider} from "react-redux";

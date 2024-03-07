@@ -5,8 +5,8 @@
   "homepage": "https://yorickreum.github.io/react-applaus-o-meter/",
   "main": "index.js",
   "dependencies": {
-"@vitejs/plugin-react-swc": "^3.6.0",
-    "bootstrap": "^4.3.1",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "bootstrap": "^4.6.2",
     "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
@@ -36,7 +36,7 @@
     "start-js": "react-scripts start --inspect-brk",
     "build": "yarn run build-css && tsc && vite build",
     "serve": "vite preview",
-    "start": "npm-run-all -p watch-css vite",
+    "start": "vite",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
@@ -56,8 +56,8 @@
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
-    "dart-sass": "^1.25.0",
     "gh-pages": "^6.1.1",
+    "sass": "^1.71.1",
     "typescript": "^5.4.2"
   }
 }

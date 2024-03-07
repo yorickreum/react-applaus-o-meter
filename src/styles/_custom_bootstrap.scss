@@ -1,4 +1,5 @@
-$baseurl: 'https://yorickreum.github.io/react-applaus-o-meter';
+// $baseurl: 'https://yorickreum.github.io/react-applaus-o-meter';
+$baseurl: 'http://localhost:5173';
 
 @font-face {
   font-family: 'GreatLakesNf';
@@ -17,6 +18,10 @@ $baseurl: 'https://yorickreum.github.io/react-applaus-o-meter';
   src: url($baseurl + '/fonts/AmericanTypewriter.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url($baseurl + '/fonts/OpenSans-Regular.woff2') format('woff2');
+}
 
 // $font-family-base: 'BebasNeue';
 $font-family-base: 'Open Sans';
