@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CompetitionTable from "../components/CompetitionTable";
 import Competition from '../entities/Competition';
-import CalibrationCompetitor from "../entities/CalibrationCompetitor";
+// import CalibrationCompetitor from "../entities/CalibrationCompetitor";
 import {connect} from "react-redux";
 import {
     addCompetitor,

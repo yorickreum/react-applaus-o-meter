@@ -7,14 +7,14 @@ import type {PersistConfig} from 'redux-persist/es/types'
 import type {Store} from 'redux'
 
 type CrosstabConfig = {
-    blacklist?: ?Array<string>,
-    keyPrefix?: ?string,
-    whitelist?: ?Array<string>,
+    blacklist?: string[] | null | undefined,
+    keyPrefix?: string | null | undefined,
+    whitelist?: string[] | null | undefined,
 }
 
 function crosstabSync(store: Store, persistConfig?: PersistConfig, crosstabConfig?: CrosstabConfig) {
-    const blacklist: ?Array<string> = (crosstabConfig && crosstabConfig.blacklist) ? crosstabConfig.blacklist : null;
-    const whitelist: ?Array<string> = (crosstabConfig && crosstabConfig.whitelist) ? crosstabConfig.whitelist : null;
+    const blacklist: string[] | null | undefined = (crosstabConfig && crosstabConfig.blacklist) ? crosstabConfig.blacklist : null;
+    const whitelist: string[] | null | undefined = (crosstabConfig && crosstabConfig.whitelist) ? crosstabConfig.whitelist : null;
     const keyPrefix: string = (crosstabConfig && crosstabConfig.keyPrefix) ? crosstabConfig.keyPrefix : KEY_PREFIX;
 
     const {key}: { key: string } = persistConfig;

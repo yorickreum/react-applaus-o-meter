@@ -23,7 +23,7 @@ import Button from "react-bootstrap/Button";
 import {Modal} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
-class CompetitorTableRow extends Component<{}> {
+class CompetitorTableRow extends Component {
 
     constructor(props) {
         super(props);

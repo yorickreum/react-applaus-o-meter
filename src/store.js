@@ -3,7 +3,7 @@ import {persistReducer, persistStore} from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import crosstabSync from "./utils/crosstabSync"
 import rootReducer from "./reducers";
-import thunk from "redux-thunk";
+import {thunk} from 'redux-thunk';
 
 const persistConfig = {
     key: 'root',

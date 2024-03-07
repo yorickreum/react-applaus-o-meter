@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import {PersistGate} from 'redux-persist/integration/react'
-import {HashRouter, Link, Route, Switch} from 'react-router-dom';
+import {HashRouter, Link, Route, Routes} from 'react-router-dom';
 import Admin from './screens/Admin';
 import registerServiceWorker from './registerServiceWorker';
 import './styles/index.css'
@@ -59,7 +59,10 @@ class Areas extends Component {
     }
 }
 
-ReactDOM.render(
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             <Helmet>
@@ -68,15 +71,14 @@ ReactDOM.render(
             </Helmet>
             <Heading/>
             <HashRouter>
-                <Switch>
-                    <Route exact path="/" component={Areas}/>
-                    <Route path="/admin" component={Admin}/>
-                    <Route path="/view" component={View}/>
-                </Switch>
+                <Routes>
+                    <Route exact path="/" element={<Areas />}/>
+                    <Route path="/admin" element={<Admin/>}/>
+                    <Route path="/view" element={<View />}/>
+                </Routes>
             </HashRouter>
         </PersistGate>
-    </Provider>,
-    document.getElementById('root')
-);
+    </Provider>
+)
 
 registerServiceWorker();

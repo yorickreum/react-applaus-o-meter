@@ -1,5 +1,5 @@
-import Competitor from './Competitor';
-import CalibrationCompetitor from "./CalibrationCompetitor";
+// import Competitor from './Competitor';
+// import CalibrationCompetitor from "./CalibrationCompetitor";
 
 class _Competition {
     constructor() {

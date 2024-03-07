@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {dismissError} from "../actions";
 
 
-class ErrorToast extends Component<{}> {
+class ErrorToast extends Component {
     constructor(props) {
         super(props);
         this.state = {
