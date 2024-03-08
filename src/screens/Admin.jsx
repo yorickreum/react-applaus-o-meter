@@ -10,6 +10,7 @@ import {
     initiateVolumemeter,
     setDuration,
     setMaxvol,
+    setTitle,
     switchBlank,
     updateAllRatings
 } from "../actions";
@@ -145,6 +146,22 @@ class Admin extends Component {
                                 >
                                     Initiate Volumemeter
                                 </Button>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-2">
+                                <label
+                                    htmlFor="eventTitle">
+                                    Event title
+                                </label>
+                            </div>
+                            <div className="col-8 d-flex align-items-center">
+                               <Form.Control type="text" size="sm" value={this.props.title} onChange={
+                                (event) => {
+                                    console.log(event.target.value);
+                                    this.props.dispatch(setTitle(event.target.value));
+                                }
+                               } />
                             </div>
                         </div>
                         <div className="row">
@@ -289,7 +306,8 @@ class Admin extends Component {
 const mapStateToProps = state => ({
     showBlank: state.control.showBlank,
     duration: state.administration.duration,
-    maxVol: state.administration.maxVol
+    maxVol: state.administration.maxVol,
+    title: state.administration.title
 });
 
 export default connect(mapStateToProps)(Admin)
