@@ -28,7 +28,7 @@ const initialStates = {
         showBlank: false
     },
     administration: {
-        title: 'Slammen im Schloss V',
+        title: 'Scheinfeld Slammt',
         maxVol: 1,
         duration: 10000
     },
